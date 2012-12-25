@@ -23,6 +23,9 @@
  
     Each string argument must be followed by a dispatch_block_t
     argument which would be executed if a match is found.
+ 
+    @note If a match is found, the processing block is 
+          executed synchronously in the current queue
  */
 BOOL FRB_switch_strings(NSString *arg, ...);
 
@@ -40,5 +43,8 @@ BOOL FRB_switch_strings(NSString *arg, ...);
  
     Each class argument must be followed by a dispatch_block_t
     argument which would be executed if a match is found.
+ 
+    @note If a match is found, the processing block is 
+          executed synchronously in the current queue
  */
 BOOL FRB_switch_class_kindof(id arg, ...);
