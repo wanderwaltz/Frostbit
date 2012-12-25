@@ -1,15 +1,15 @@
 Pod::Spec.new do |spec|
 	spec.name         = 'Frostbit'
-	spec.version      = '1.0.0'   
+	spec.version      = '0.0.1'   
 
-	spec.author       = { 'Egor Chiglintsev' => 'egor.chiglintsev@gmail.com' }                                                               
+	spec.author       = { 'Egor Chiglintsev' => 'wanderwaltz@gmail.com' }                                                               
 	spec.license	  = { :type => 'MIT', :file => 'LICENSE.txt' }
-	spec.homepage     = ''
+	spec.homepage     = 'https://github.com/wanderwaltz/Frostbit'
 
 	spec.summary      = 'A multi-purpose Objective-C library for use with Cocoa Touch projects mostly.'
 	
 	spec.platform     = :ios
-	spec.source       = { :git => ''}
+	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :commit => :head}
 	
 	spec.source_files = 'Frostbit/Common/**/*.{h,m}'
 
