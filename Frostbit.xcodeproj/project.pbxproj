@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
-		5DC632A91689D5BD000ED53C /* Frostbit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5DC632A81689D5BD000ED53C /* Frostbit.h */; };
-		5DC632AB1689D5BD000ED53C /* Frostbit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632AA1689D5BD000ED53C /* Frostbit.m */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B51689D5BD000ED53C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B41689D5BD000ED53C /* UIKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
 		5DC632BF1689D5BD000ED53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DC632BD1689D5BD000ED53C /* InfoPlist.strings */; };
 		5DC632C21689D5BD000ED53C /* FrostbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632C11689D5BD000ED53C /* FrostbitTests.m */; };
+		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
+		5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				5DC632A91689D5BD000ED53C /* Frostbit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +44,6 @@
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
-		5DC632A81689D5BD000ED53C /* Frostbit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Frostbit.h; sourceTree = "<group>"; };
-		5DC632AA1689D5BD000ED53C /* Frostbit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Frostbit.m; sourceTree = "<group>"; };
 		5DC632B11689D5BD000ED53C /* FrostbitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrostbitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632B21689D5BD000ED53C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5DC632B41689D5BD000ED53C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -54,6 +51,13 @@
 		5DC632BE1689D5BD000ED53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DC632C01689D5BD000ED53C /* FrostbitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrostbitTests.h; sourceTree = "<group>"; };
 		5DC632C11689D5BD000ED53C /* FrostbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrostbitTests.m; sourceTree = "<group>"; };
+		5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBPointFunctions.h; sourceTree = "<group>"; };
+		5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBPointFunctions.m; sourceTree = "<group>"; };
+		5DC632D01689D6CB000ED53C /* FRBRectFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBRectFunctions.h; sourceTree = "<group>"; };
+		5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBRectFunctions.m; sourceTree = "<group>"; };
+		5DC632D41689D769000ED53C /* FRBCompilerAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBCompilerAttributes.h; sourceTree = "<group>"; };
+		5DC632D61689D7BA000ED53C /* FRBTypesCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBTypesCommon.h; sourceTree = "<group>"; };
+		5DC632D71689D8A8000ED53C /* FRBGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBGeometry.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,8 @@
 		5DC632A51689D5BD000ED53C /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
-				5DC632A81689D5BD000ED53C /* Frostbit.h */,
-				5DC632AA1689D5BD000ED53C /* Frostbit.m */,
+				5DC632CC1689D674000ED53C /* Common */,
+				5DC632CB1689D674000ED53C /* Geometry */,
 				5DC632A61689D5BD000ED53C /* Supporting Files */,
 			);
 			path = Frostbit;
@@ -143,6 +147,43 @@
 				5DC632BD1689D5BD000ED53C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DC632CB1689D674000ED53C /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				5DC632D71689D8A8000ED53C /* FRBGeometry.h */,
+				5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */,
+				5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */,
+				5DC632D01689D6CB000ED53C /* FRBRectFunctions.h */,
+				5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		5DC632CC1689D674000ED53C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5DC632D51689D7AE000ED53C /* Types */,
+				5DC632D31689D75A000ED53C /* Meta */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5DC632D31689D75A000ED53C /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				5DC632D41689D769000ED53C /* FRBCompilerAttributes.h */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
+		5DC632D51689D7AE000ED53C /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				5DC632D61689D7BA000ED53C /* FRBTypesCommon.h */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DC632AB1689D5BD000ED53C /* Frostbit.m in Sources */,
+				5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */,
+				5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
