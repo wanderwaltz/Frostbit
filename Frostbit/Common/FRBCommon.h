@@ -12,6 +12,8 @@
 #import <Foundation/Foundation.h>
 
 #import "FRBCompilerAttributes.h"
+#import "FRBAssertMacros.h"
+
 #import "FRBTypesCommon.h"
 
 #endif

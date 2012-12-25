@@ -80,6 +80,7 @@
 		5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestGeometryPointFunctions.h; sourceTree = "<group>"; };
 		5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestGeometryPointFunctions.m; sourceTree = "<group>"; };
 		5DC63368168A2A0B000ED53C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5DC6336E168A2B47000ED53C /* FRBAssertMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBAssertMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC632D41689D769000ED53C /* FRBCompilerAttributes.h */,
+				5DC6336E168A2B47000ED53C /* FRBAssertMacros.h */,
 			);
 			path = Meta;
 			sourceTree = "<group>";
