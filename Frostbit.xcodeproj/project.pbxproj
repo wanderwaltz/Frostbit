@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
-		5DC632B51689D5BD000ED53C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B41689D5BD000ED53C /* UIKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
 		5DC632BF1689D5BD000ED53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DC632BD1689D5BD000ED53C /* InfoPlist.strings */; };
@@ -32,6 +31,7 @@
 		5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */; };
 		5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */; };
 		5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */; };
+		5DC63369168A2A0C000ED53C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC63368168A2A0B000ED53C /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
 		5DC632B11689D5BD000ED53C /* FrostbitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrostbitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632B21689D5BD000ED53C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		5DC632B41689D5BD000ED53C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5DC632BC1689D5BD000ED53C /* FrostbitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrostbitTests-Info.plist"; sourceTree = "<group>"; };
 		5DC632BE1689D5BD000ED53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBPointFunctions.h; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBSizeFunctions.m; sourceTree = "<group>"; };
 		5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestGeometryPointFunctions.h; sourceTree = "<group>"; };
 		5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestGeometryPointFunctions.m; sourceTree = "<group>"; };
+		5DC63368168A2A0B000ED53C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC63369168A2A0C000ED53C /* CoreGraphics.framework in Frameworks */,
 				5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +97,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */,
-				5DC632B51689D5BD000ED53C /* UIKit.framework in Frameworks */,
 				5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */,
 				5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */,
 			);
@@ -127,9 +127,9 @@
 		5DC632A21689D5BD000ED53C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DC63368168A2A0B000ED53C /* CoreGraphics.framework */,
 				5DC632A31689D5BD000ED53C /* Foundation.framework */,
 				5DC632B21689D5BD000ED53C /* SenTestingKit.framework */,
-				5DC632B41689D5BD000ED53C /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

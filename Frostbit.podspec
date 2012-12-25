@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
 	spec.subspec 'Geometry' do |geometry|
     	geometry.source_files = 'Frostbit/Geometry/**/*.{h,m}'
-    	geometry.framework    = 'UIKit'
+    	geometry.framework    = 'CoreGraphics'
 	end
 
 

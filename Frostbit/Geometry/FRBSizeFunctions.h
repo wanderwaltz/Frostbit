@@ -11,9 +11,10 @@
 #pragma mark -
 #pragma mark typedefs
 
-/*! In the current implementation this is only an alias for CGRect,
-    so UIKit framework is required. But this may change in the future,
-    and because of that Frostbit-specific types should be used.
+/*! In the current implementation this is only an alias for CGSize,
+    so Core Graphics framework is required. But this may change in 
+    the future, and because of that Frostbit-specific types should 
+    be used.
  */
 typedef CGSize FRBSize;
 

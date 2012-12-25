@@ -9,7 +9,7 @@
 #ifndef Frostbit_FRBGeometry_h
 #define Frostbit_FRBGeometry_h
 
-#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #import "FRBCommon.h"
 
