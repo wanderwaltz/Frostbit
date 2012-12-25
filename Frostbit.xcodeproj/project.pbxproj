@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5DC633491689FE94000ED53C /* Appledoc */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5DC6334A1689FE94000ED53C /* Build configuration list for PBXAggregateTarget "Appledoc" */;
+			buildPhases = (
+				5DC6334D1689FE9E000ED53C /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Appledoc;
+			productName = Appledoc;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
@@ -17,6 +31,7 @@
 		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
 		5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */; };
 		5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */; };
+		5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +78,8 @@
 		5DC633321689FC2F000ED53C /* FRBDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatch.h; sourceTree = "<group>"; };
 		5DC633331689FC2F000ED53C /* FRBDispatchFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatchFunctions.h; sourceTree = "<group>"; };
 		5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDispatchFunctions.m; sourceTree = "<group>"; };
+		5DC6334E168A104C000ED53C /* FRBSizeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBSizeFunctions.h; sourceTree = "<group>"; };
+		5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBSizeFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +180,8 @@
 				5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */,
 				5DC632D01689D6CB000ED53C /* FRBRectFunctions.h */,
 				5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */,
+				5DC6334E168A104C000ED53C /* FRBSizeFunctions.h */,
+				5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -266,6 +285,7 @@
 			targets = (
 				5DC6329F1689D5BD000ED53C /* Frostbit */,
 				5DC632B01689D5BD000ED53C /* FrostbitTests */,
+				5DC633491689FE94000ED53C /* Appledoc */,
 			);
 		};
 /* End PBXProject section */
@@ -295,6 +315,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		5DC6334D1689FE9E000ED53C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "appledoc --project-name Frostbit --project-company \"Frostbit\" --company-id com.frostbit --output Appledoc --logformat xcode --keep-intermediate-files --no-create-docset .";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -305,6 +338,7 @@
 				5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */,
 				5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */,
 				5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */,
+				5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +473,20 @@
 			};
 			name = Release;
 		};
+		5DC6334B1689FE94000ED53C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5DC6334C1689FE94000ED53C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,6 +516,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5DC6334A1689FE94000ED53C /* Build configuration list for PBXAggregateTarget "Appledoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC6334B1689FE94000ED53C /* Debug */,
+				5DC6334C1689FE94000ED53C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

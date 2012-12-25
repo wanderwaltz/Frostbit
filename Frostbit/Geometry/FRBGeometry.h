@@ -14,6 +14,7 @@
 #import "FRBCommon.h"
 
 #import "FRBPointFunctions.h"
+#import "FRBSizeFunctions.h"
 #import "FRBRectFunctions.h"
 
 #endif

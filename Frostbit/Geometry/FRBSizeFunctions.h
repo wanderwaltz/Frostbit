@@ -1,5 +1,5 @@
 //
-//  FRBPointFunctions.h
+//  FRBSizeFunctions.h
 //  Frostbit
 //
 //  Created by Egor Chiglintsev on 25.12.12.
@@ -11,17 +11,17 @@
 #pragma mark -
 #pragma mark typedefs
 
-/*! In the current implementation this is only an alias for CGPoint,
+/*! In the current implementation this is only an alias for CGRect,
     so UIKit framework is required. But this may change in the future,
     and because of that Frostbit-specific types should be used.
  */
-typedef CGPoint FRBPoint;
+typedef CGSize FRBSize;
 
 
 #pragma mark -
 #pragma mark functions
 
-/*! Analog of CGPointMake function to initialize a FRBPoint with the
-    given coordinate values.
+/*! Analog of CGSizeMake function to initialize a FRBSize with the
+    given origin coordinates and width/height
  */
-FRBPoint FRBPointMake(const FRBFloat x, const FRBFloat y) FRB_ATTR_CONST;
+FRBSize FRBSizeMake(const FRBFloat width, const FRBFloat height) FRB_ATTR_CONST;

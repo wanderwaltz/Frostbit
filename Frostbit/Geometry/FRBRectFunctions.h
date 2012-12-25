@@ -11,11 +11,18 @@
 #pragma mark -
 #pragma mark typedefs
 
+/*! In the current implementation this is only an alias for CGRect,
+    so UIKit framework is required. But this may change in the future,
+    and because of that Frostbit-specific types should be used.
+ */
 typedef CGRect FRBRect;
 
 
 #pragma mark -
 #pragma mark functions
 
+/*! Analog of CGRectMake function to initialize a FRBRect with the
+    given origin coordinates and width/height
+ */
 FRBRect FRBRectMake(const FRBFloat x,     const FRBFloat y,
                     const FRBFloat width, const FRBFloat height) FRB_ATTR_CONST;
