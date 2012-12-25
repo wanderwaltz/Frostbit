@@ -16,6 +16,7 @@
 		5DC632C21689D5BD000ED53C /* FrostbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632C11689D5BD000ED53C /* FrostbitTests.m */; };
 		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
 		5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */; };
+		5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,10 @@
 		5DC632D41689D769000ED53C /* FRBCompilerAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBCompilerAttributes.h; sourceTree = "<group>"; };
 		5DC632D61689D7BA000ED53C /* FRBTypesCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBTypesCommon.h; sourceTree = "<group>"; };
 		5DC632D71689D8A8000ED53C /* FRBGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBGeometry.h; sourceTree = "<group>"; };
+		5DC633231689FAEE000ED53C /* FRBCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBCommon.h; sourceTree = "<group>"; };
+		5DC633321689FC2F000ED53C /* FRBDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatch.h; sourceTree = "<group>"; };
+		5DC633331689FC2F000ED53C /* FRBDispatchFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDispatchFunctions.h; sourceTree = "<group>"; };
+		5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDispatchFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC632CC1689D674000ED53C /* Common */,
+				5DC633311689FC1C000ED53C /* Dispatch */,
 				5DC632CB1689D674000ED53C /* Geometry */,
 				5DC632A61689D5BD000ED53C /* Supporting Files */,
 			);
@@ -164,6 +170,7 @@
 		5DC632CC1689D674000ED53C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5DC633231689FAEE000ED53C /* FRBCommon.h */,
 				5DC632D51689D7AE000ED53C /* Types */,
 				5DC632D31689D75A000ED53C /* Meta */,
 			);
@@ -185,6 +192,17 @@
 			);
 			path = Types;
 			sourceTree = "<group>";
+		};
+		5DC633311689FC1C000ED53C /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				5DC633321689FC2F000ED53C /* FRBDispatch.h */,
+				5DC633331689FC2F000ED53C /* FRBDispatchFunctions.h */,
+				5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */,
+			);
+			name = Dispatch;
+			path = Frostbit/Dispatch;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -286,6 +304,7 @@
 			files = (
 				5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */,
 				5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */,
+				5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +458,7 @@
 				5DC632C71689D5BD000ED53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DC632C81689D5BD000ED53C /* Build configuration list for PBXNativeTarget "FrostbitTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +467,7 @@
 				5DC632CA1689D5BD000ED53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

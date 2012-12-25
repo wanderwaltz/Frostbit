@@ -9,11 +9,9 @@
 #ifndef Frostbit_FRBGeometry_h
 #define Frostbit_FRBGeometry_h
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "FRBTypesCommon.h"
-#import "FRBCompilerAttributes.h"
+#import "FRBCommon.h"
 
 #import "FRBPointFunctions.h"
 #import "FRBRectFunctions.h"
