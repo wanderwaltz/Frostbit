@@ -27,11 +27,11 @@
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
 		5DC632BF1689D5BD000ED53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DC632BD1689D5BD000ED53C /* InfoPlist.strings */; };
-		5DC632C21689D5BD000ED53C /* FrostbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632C11689D5BD000ED53C /* FrostbitTests.m */; };
 		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
 		5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */; };
 		5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */; };
 		5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */; };
+		5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,6 @@
 		5DC632B41689D5BD000ED53C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5DC632BC1689D5BD000ED53C /* FrostbitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrostbitTests-Info.plist"; sourceTree = "<group>"; };
 		5DC632BE1689D5BD000ED53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5DC632C01689D5BD000ED53C /* FrostbitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrostbitTests.h; sourceTree = "<group>"; };
-		5DC632C11689D5BD000ED53C /* FrostbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrostbitTests.m; sourceTree = "<group>"; };
 		5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBPointFunctions.h; sourceTree = "<group>"; };
 		5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBPointFunctions.m; sourceTree = "<group>"; };
 		5DC632D01689D6CB000ED53C /* FRBRectFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBRectFunctions.h; sourceTree = "<group>"; };
@@ -80,6 +78,8 @@
 		5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDispatchFunctions.m; sourceTree = "<group>"; };
 		5DC6334E168A104C000ED53C /* FRBSizeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBSizeFunctions.h; sourceTree = "<group>"; };
 		5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBSizeFunctions.m; sourceTree = "<group>"; };
+		5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestGeometryPointFunctions.h; sourceTree = "<group>"; };
+		5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestGeometryPointFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,8 @@
 		5DC632BA1689D5BD000ED53C /* FrostbitTests */ = {
 			isa = PBXGroup;
 			children = (
-				5DC632C01689D5BD000ED53C /* FrostbitTests.h */,
-				5DC632C11689D5BD000ED53C /* FrostbitTests.m */,
+				5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */,
+				5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */,
 				5DC632BB1689D5BD000ED53C /* Supporting Files */,
 			);
 			path = FrostbitTests;
@@ -268,6 +268,7 @@
 		5DC632971689D5BD000ED53C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FRB;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Egor Chiglintsev";
 			};
@@ -346,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DC632C21689D5BD000ED53C /* FrostbitTests.m in Sources */,
+				5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,8 +426,10 @@
 				DSTROOT = /tmp/Frostbit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frostbit/Frostbit-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -437,8 +440,10 @@
 				DSTROOT = /tmp/Frostbit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frostbit/Frostbit-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
