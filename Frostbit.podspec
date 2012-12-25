@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 	spec.version      = '1.0.0'   
 
 	spec.author       = { 'Egor Chiglintsev' => 'egor.chiglintsev@gmail.com' }                                                               
-	spec.license	  = 'MIT'
+	spec.license	  = { :type => 'MIT', :file => 'LICENSE.txt' }
 	spec.homepage     = ''
 
 	spec.summary      = 'A multi-purpose Objective-C library for use with Cocoa Touch projects mostly.'
