@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
 	spec.summary      = 'A multi-purpose Objective-C library for use with Cocoa Touch projects mostly.'
 	
 	spec.platform     = :ios
-	spec.source       = { :git => 'git://github.com/wanderwaltz/Frostbit.git', :commit => :head }
+	spec.source       = { :git => 'git://github.com/wanderwaltz/Frostbit.git', :tag => '0.0.1' }
 	
 	spec.source_files = 'Frostbit/Common/**/*.{h,m}'
 
