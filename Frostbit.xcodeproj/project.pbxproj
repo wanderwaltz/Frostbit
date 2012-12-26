@@ -32,6 +32,9 @@
 		5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6334F168A104C000ED53C /* FRBSizeFunctions.m */; };
 		5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */; };
 		5DC63369168A2A0C000ED53C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC63368168A2A0B000ED53C /* CoreGraphics.framework */; };
+		5DC63384168ACBD5000ED53C /* FRBCommonCryptoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63383168ACBD5000ED53C /* FRBCommonCryptoFunctions.m */; };
+		5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */; };
+		5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,13 @@
 		5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestGeometryPointFunctions.m; sourceTree = "<group>"; };
 		5DC63368168A2A0B000ED53C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5DC6336E168A2B47000ED53C /* FRBAssertMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBAssertMacros.h; sourceTree = "<group>"; };
+		5DC6337D168ACB7E000ED53C /* FRBCommonCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBCommonCrypto.h; sourceTree = "<group>"; };
+		5DC63382168ACBD5000ED53C /* FRBCommonCryptoFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBCommonCryptoFunctions.h; sourceTree = "<group>"; };
+		5DC63383168ACBD5000ED53C /* FRBCommonCryptoFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBCommonCryptoFunctions.m; sourceTree = "<group>"; };
+		5DC63385168ACC17000ED53C /* NSData+FRBCommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FRBCommonCrypto.h"; sourceTree = "<group>"; };
+		5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FRBCommonCrypto.m"; sourceTree = "<group>"; };
+		5DC63388168ACC26000ED53C /* NSString+FRBCommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRBCommonCrypto.h"; sourceTree = "<group>"; };
+		5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRBCommonCrypto.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +151,7 @@
 				5DC632CC1689D674000ED53C /* Common */,
 				5DC633311689FC1C000ED53C /* Dispatch */,
 				5DC632CB1689D674000ED53C /* Geometry */,
+				5DC6337C168ACB68000ED53C /* CommonCrypto */,
 				5DC632A61689D5BD000ED53C /* Supporting Files */,
 			);
 			path = Frostbit;
@@ -224,6 +235,53 @@
 			name = Dispatch;
 			path = Frostbit/Dispatch;
 			sourceTree = SOURCE_ROOT;
+		};
+		5DC6337C168ACB68000ED53C /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				5DC6337D168ACB7E000ED53C /* FRBCommonCrypto.h */,
+				5DC63381168ACBBB000ED53C /* Functions */,
+				5DC6337E168ACBBB000ED53C /* Categories */,
+			);
+			name = CommonCrypto;
+			path = Frostbit/CommonCrypto;
+			sourceTree = SOURCE_ROOT;
+		};
+		5DC6337E168ACBBB000ED53C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5DC6337F168ACBBB000ED53C /* NSData */,
+				5DC63380168ACBBB000ED53C /* NSString */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		5DC6337F168ACBBB000ED53C /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				5DC63385168ACC17000ED53C /* NSData+FRBCommonCrypto.h */,
+				5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */,
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
+		5DC63380168ACBBB000ED53C /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				5DC63388168ACC26000ED53C /* NSString+FRBCommonCrypto.h */,
+				5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		5DC63381168ACBBB000ED53C /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				5DC63382168ACBD5000ED53C /* FRBCommonCryptoFunctions.h */,
+				5DC63383168ACBD5000ED53C /* FRBCommonCryptoFunctions.m */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +400,9 @@
 				5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */,
 				5DC633351689FC2F000ED53C /* FRBDispatchFunctions.m in Sources */,
 				5DC63350168A104C000ED53C /* FRBSizeFunctions.m in Sources */,
+				5DC63384168ACBD5000ED53C /* FRBCommonCryptoFunctions.m in Sources */,
+				5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */,
+				5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
