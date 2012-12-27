@@ -10,10 +10,11 @@ Pod::Spec.new do |spec|
 	
 	spec.platform     = :ios
 	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :commit => :head }
-	
-	spec.source_files = 'Frostbit/Common/**/*.{h,m}'
 
 	# Subspecs (modules)
+	spec.subspec 'Common' do |common|
+		common.source_files = 'Frostbit/Common/**/*.{h,m}'
+	end
 
 	spec.subspec 'Geometry' do |geometry|
     	geometry.source_files = 'Frostbit/Geometry/**/*.{h,m}'
@@ -28,7 +29,12 @@ Pod::Spec.new do |spec|
 	# CommonCrypto subspec contains functions for easy access of
 	# the <CommonCrypto/CommonDigest.h> functionality. 
 	spec.subspec 'CommonCrypto' do |commonCrypto|
-		commonCrypto.source_files = 'Frostbit/CommonCrypto/*.{h,m}', 'Frostbit/CommonCrypto/Functions/**/*.{h,m}'
+		commonCrypto.source_files = 'Frostbit/CommonCrypto/*.{h,m}'
+		commonCrypto.requires_arc = true
+
+		commonCrypto.subspec 'Functions' do |functions|
+			functions.source_files = 'Frostbit/CommonCrypto/Functions/**/*.{h,m}'
+		end
 
 		commonCrypto.subspec 'Categories' do |categories|
 
