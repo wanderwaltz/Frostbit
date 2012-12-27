@@ -24,6 +24,7 @@ Pod::Spec.new do |spec|
 
 	spec.subspec 'Dispatch' do |dispatch|
     	dispatch.source_files = 'Frostbit/Dispatch/**/*.{h,m}'
+    	dispatch.requires_arc = true
 	end
 
 	# CommonCrypto subspec contains functions for easy access of

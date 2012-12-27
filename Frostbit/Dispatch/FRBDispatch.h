@@ -10,5 +10,7 @@
 #define Frostbit_FRBDispatch_h
 
 #import "FRBCommon.h"
+#import "FRBDispatchFunctions.h"
+#import "FRBKeyedTargetAction.h"
 
 #endif

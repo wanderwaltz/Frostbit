@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
@@ -60,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5DC0B2B8168CD3DD0035A910 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
+		5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
@@ -116,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DC0B2B6168CD3B90035A910 /* Keyed Target Action */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0B2B8168CD3DD0035A910 /* FRBKeyedTargetAction.h */,
+				5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */,
+			);
+			name = "Keyed Target Action";
+			sourceTree = "<group>";
+		};
 		5DC632951689D5BD000ED53C = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +243,7 @@
 				5DC633321689FC2F000ED53C /* FRBDispatch.h */,
 				5DC633331689FC2F000ED53C /* FRBDispatchFunctions.h */,
 				5DC633341689FC2F000ED53C /* FRBDispatchFunctions.m */,
+				5DC0B2B6168CD3B90035A910 /* Keyed Target Action */,
 			);
 			name = Dispatch;
 			path = Frostbit/Dispatch;
@@ -403,6 +416,7 @@
 				5DC63384168ACBD5000ED53C /* FRBCommonCryptoFunctions.m in Sources */,
 				5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */,
 				5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */,
+				5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +606,7 @@
 				5DC6334C1689FE94000ED53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
