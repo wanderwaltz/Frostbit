@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
 
 	spec.summary      = 'A multi-purpose Objective-C library for use with Cocoa Touch projects mostly.'
 	
-	spec.platform     = :ios
+	spec.platform     = :ios, '6.0'
 	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :commit => :head }
 
 	# Subspecs (modules)
