@@ -63,7 +63,7 @@ Pod::Spec.new do |spec|
 		uikit.subspec 'Classes' do |uiclasses|
 			uiclasses.subspec 'FRBDatePickerPopover' do |dpp|
 				dpp.source_files   = 'Frostbit/UIKit/Classes/FRBDatePickerPopover/**/*.{h,m}'
-				dpp.prefix_header_contents = '#define FRB_DATE_PICKER_POPOVER'
+			
 				dpp.dependency 'Frostbit/UIKit/Categories/UIViewController'
 			end
 		end
@@ -72,7 +72,6 @@ Pod::Spec.new do |spec|
 		uikit.subspec 'Categories' do |uicategories|
 			uicategories.subspec 'UIViewController' do |vc|
 				vc.source_files   = 'Frostbit/UIKit/Categories/UIViewController/**/*.{h,m}'
-				vc.prefix_header_contents = '#define FRB_CATEGORIES_VIEW_CONTROLLER'
 			end
 		end
 	end
