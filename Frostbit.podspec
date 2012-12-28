@@ -49,4 +49,29 @@ Pod::Spec.new do |spec|
 			end
 		end
 	end
+
+
+	# UIKit subspec contains Cocoa Touch UI classes dependent on UIKit frameworks
+	# Each individual UI element will be available as a separate subspec, also
+	# bundles of all UI classes and all UI categories will be available as subspecs
+	spec.subspec 'UIKit' do |uikit|
+		uikit.source_files = 'Frostbit/UIKit/*.{h,m}'
+		uikit.framework    = 'UIKit'
+		uikit.requires_arc = true
+
+		# UI classes
+		uikit.subspec 'Classes' do |uiclasses|
+
+			uiclasses.subspec 'FRBDatePickerActionSheet' do |datepickersheet|
+				datepickersheet.source_files = 'Frostbit/UIKit/Classes/FRBDatePickerActionSheet/*.{h,m}'
+			end
+		end
+
+		# UI categories
+		uikit.subspec 'Categories' do |uicategories|
+		end
+	end
+
+
+
 end
