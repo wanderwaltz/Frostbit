@@ -14,4 +14,14 @@
 
 #import "FRBCommon.h"
 
+
+#ifdef FRB_DATE_PICKER_POPOVER
+    #import "FRBDatePickerPopover.h"
+#endif
+
+
+#ifdef FRB_CATEGORIES_VIEW_CONTROLLER
+    #import "UIViewController+FRBNavigationStack.h"
+#endif
+
 #endif

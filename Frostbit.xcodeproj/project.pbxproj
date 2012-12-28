@@ -36,6 +36,8 @@
 		5DC63384168ACBD5000ED53C /* FRBCommonCryptoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63383168ACBD5000ED53C /* FRBCommonCryptoFunctions.m */; };
 		5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */; };
 		5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */; };
+		5DCC9616168DA780004F8D4E /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */; };
+		5DCC9619168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9618168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,10 @@
 		5DC63388168ACC26000ED53C /* NSString+FRBCommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRBCommonCrypto.h"; sourceTree = "<group>"; };
 		5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRBCommonCrypto.m"; sourceTree = "<group>"; };
 		5DCC95EB168D9B43004F8D4E /* FRBUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBUIKit.h; sourceTree = "<group>"; };
+		5DCC9614168DA780004F8D4E /* FRBDatePickerPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDatePickerPopover.h; sourceTree = "<group>"; };
+		5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerPopover.m; sourceTree = "<group>"; };
+		5DCC9617168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRBNavigationStack.h"; sourceTree = "<group>"; };
+		5DCC9618168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRBNavigationStack.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +317,7 @@
 		5DCC95E5168D9AF3004F8D4E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				5DCC9612168DA77A004F8D4E /* UIViewController */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -318,8 +325,27 @@
 		5DCC95E6168D9AF3004F8D4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5DCC9613168DA780004F8D4E /* FRBDatePickerPopover */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5DCC9612168DA77A004F8D4E /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC9617168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.h */,
+				5DCC9618168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		5DCC9613168DA780004F8D4E /* FRBDatePickerPopover */ = {
+			isa = PBXGroup;
+			children = (
+				5DCC9614168DA780004F8D4E /* FRBDatePickerPopover.h */,
+				5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */,
+			);
+			path = FRBDatePickerPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +469,8 @@
 				5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */,
 				5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */,
 				5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */,
+				5DCC9616168DA780004F8D4E /* FRBDatePickerPopover.m in Sources */,
+				5DCC9619168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
