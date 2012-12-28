@@ -61,10 +61,6 @@ Pod::Spec.new do |spec|
 
 		# UI classes
 		uikit.subspec 'Classes' do |uiclasses|
-
-			uiclasses.subspec 'FRBDatePickerActionSheet' do |datepickersheet|
-				datepickersheet.source_files = 'Frostbit/UIKit/Classes/FRBDatePickerActionSheet/*.{h,m}'
-			end
 		end
 
 		# UI categories

@@ -36,7 +36,6 @@
 		5DC63384168ACBD5000ED53C /* FRBCommonCryptoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63383168ACBD5000ED53C /* FRBCommonCryptoFunctions.m */; };
 		5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */; };
 		5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */; };
-		5DCC95EA168D9B0E004F8D4E /* FRBDatePickerActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC95E9168D9B0E004F8D4E /* FRBDatePickerActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +94,6 @@
 		5DC63386168ACC17000ED53C /* NSData+FRBCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FRBCommonCrypto.m"; sourceTree = "<group>"; };
 		5DC63388168ACC26000ED53C /* NSString+FRBCommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FRBCommonCrypto.h"; sourceTree = "<group>"; };
 		5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FRBCommonCrypto.m"; sourceTree = "<group>"; };
-		5DCC95E8168D9B0E004F8D4E /* FRBDatePickerActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDatePickerActionSheet.h; sourceTree = "<group>"; };
-		5DCC95E9168D9B0E004F8D4E /* FRBDatePickerActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerActionSheet.m; sourceTree = "<group>"; };
 		5DCC95EB168D9B43004F8D4E /* FRBUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBUIKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -321,18 +318,8 @@
 		5DCC95E6168D9AF3004F8D4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5DCC95E7168D9AF3004F8D4E /* FRBDatePickerActionSheet */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		5DCC95E7168D9AF3004F8D4E /* FRBDatePickerActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				5DCC95E8168D9B0E004F8D4E /* FRBDatePickerActionSheet.h */,
-				5DCC95E9168D9B0E004F8D4E /* FRBDatePickerActionSheet.m */,
-			);
-			path = FRBDatePickerActionSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,7 +443,6 @@
 				5DC63387168ACC17000ED53C /* NSData+FRBCommonCrypto.m in Sources */,
 				5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */,
 				5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */,
-				5DCC95EA168D9B0E004F8D4E /* FRBDatePickerActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
