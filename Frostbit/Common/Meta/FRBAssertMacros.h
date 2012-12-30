@@ -66,6 +66,6 @@
  */
 #define FRB_AssertConformsTo(Object, Protocol) \
     NSAssert([Object conformsToProtocol: @protocol(Protocol)],\
-             @"Expected " @#Object " (%@) to conform to protocol " @#Protocol)
+             @"Expected " @#Object " (%@) to conform to protocol " @#Protocol, Object)
 
 #endif
