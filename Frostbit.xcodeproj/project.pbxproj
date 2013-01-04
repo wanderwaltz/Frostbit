@@ -63,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5DBD566E169717BA00728BB4 /* FRBGeometryTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBGeometryTypes.h; sourceTree = "<group>"; };
 		5DC0B2B8168CD3DD0035A910 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
 		5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC632D71689D8A8000ED53C /* FRBGeometry.h */,
+				5DBD566E169717BA00728BB4 /* FRBGeometryTypes.h */,
 				5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */,
 				5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */,
 				5DC632D01689D6CB000ED53C /* FRBRectFunctions.h */,

@@ -13,6 +13,8 @@
 
 #import "FRBCommon.h"
 
+#import "FRBGeometryTypes.h"
+
 #import "FRBPointFunctions.h"
 #import "FRBSizeFunctions.h"
 #import "FRBRectFunctions.h"
