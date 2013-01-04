@@ -16,3 +16,9 @@ FRBRect FRBRectMake(const FRBFloat x,     const FRBFloat y,
 {
     return CGRectMake(x, y, width, height);
 }
+
+
+FRBRect FRBRectMakeWithSize(const FRBSize size)
+{
+    return CGRectMake(0.0, 0.0, size.width, size.height);
+}

@@ -27,3 +27,11 @@ typedef CGRect FRBRect;
  */
 FRBRect FRBRectMake(const FRBFloat x,     const FRBFloat y,
                     const FRBFloat width, const FRBFloat height) FRB_ATTR_CONST;
+
+
+
+/*! Creates a FRBRect with the given size and origin of FRBPointZero.
+ 
+ @param size Size of the rect to make.
+ */
+FRBRect FRBRectMakeWithSize(const FRBSize size) FRB_ATTR_CONST;
