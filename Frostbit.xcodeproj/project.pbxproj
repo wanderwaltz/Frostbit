@@ -22,6 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */; };
+		5DC0C87316E21649006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
+		5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */; };
+		5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
@@ -66,6 +69,10 @@
 		5DBD566E169717BA00728BB4 /* FRBGeometryTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBGeometryTypes.h; sourceTree = "<group>"; };
 		5DC0B2B8168CD3DD0035A910 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
 		5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
+		5DC0C87116E21649006ED854 /* FRBManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBManagedObject.h; sourceTree = "<group>"; };
+		5DC0C87216E21649006ED854 /* FRBManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBManagedObject.m; sourceTree = "<group>"; };
+		5DC0C87416E2167F006ED854 /* FRBTestManagedObjectBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestManagedObjectBasic.h; sourceTree = "<group>"; };
+		5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestManagedObjectBasic.m; sourceTree = "<group>"; };
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
@@ -136,6 +143,41 @@
 			name = "Keyed Target Action";
 			sourceTree = "<group>";
 		};
+		5DC0C86E16E21637006ED854 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0C86F16E21637006ED854 /* Classes */,
+			);
+			name = "Managed Objects";
+			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		5DC0C86F16E21637006ED854 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0C87016E21637006ED854 /* FRBManagedObject */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5DC0C87016E21637006ED854 /* FRBManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0C87116E21649006ED854 /* FRBManagedObject.h */,
+				5DC0C87216E21649006ED854 /* FRBManagedObject.m */,
+			);
+			path = FRBManagedObject;
+			sourceTree = "<group>";
+		};
+		5DC0C87716E21685006ED854 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5DC0C87416E2167F006ED854 /* FRBTestManagedObjectBasic.h */,
+				5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
 		5DC632951689D5BD000ED53C = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +210,7 @@
 		5DC632A51689D5BD000ED53C /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C86E16E21637006ED854 /* Managed Objects */,
 				5DCC95E4168D9AF3004F8D4E /* UIKit */,
 				5DC632CC1689D674000ED53C /* Common */,
 				5DC633311689FC1C000ED53C /* Dispatch */,
@@ -189,6 +232,7 @@
 		5DC632BA1689D5BD000ED53C /* FrostbitTests */ = {
 			isa = PBXGroup;
 			children = (
+				5DC0C87716E21685006ED854 /* Managed Objects */,
 				5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */,
 				5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */,
 				5DC632BB1689D5BD000ED53C /* Supporting Files */,
@@ -473,6 +517,7 @@
 				5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */,
 				5DCC9616168DA780004F8D4E /* FRBDatePickerPopover.m in Sources */,
 				5DCC9619168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m in Sources */,
+				5DC0C87316E21649006ED854 /* FRBManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +526,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */,
+				5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */,
+				5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
