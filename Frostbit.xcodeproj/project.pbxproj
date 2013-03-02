@@ -25,6 +25,7 @@
 		5DC0C87316E21649006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
 		5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */; };
 		5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
+		5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87A16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
@@ -73,6 +74,8 @@
 		5DC0C87216E21649006ED854 /* FRBManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBManagedObject.m; sourceTree = "<group>"; };
 		5DC0C87416E2167F006ED854 /* FRBTestManagedObjectBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestManagedObjectBasic.h; sourceTree = "<group>"; };
 		5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestManagedObjectBasic.m; sourceTree = "<group>"; };
+		5DC0C87916E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestManagedObjectCustomGettersSetters.h; sourceTree = "<group>"; };
+		5DC0C87A16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestManagedObjectCustomGettersSetters.m; sourceTree = "<group>"; };
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 			children = (
 				5DC0C87416E2167F006ED854 /* FRBTestManagedObjectBasic.h */,
 				5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */,
+				5DC0C87916E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.h */,
+				5DC0C87A16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 				5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */,
 				5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */,
 				5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */,
+				5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
