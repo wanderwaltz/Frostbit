@@ -7,7 +7,6 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import <UIKit/UIKit.h>
 #import "FRBManagedObject.h"
 
 
@@ -17,12 +16,26 @@
 @interface FRBTestManagedObjectBasicHelper : FRBManagedObject
 
 @property (strong, nonatomic) NSString  *stringProperty;
-@property (assign, nonatomic) NSInteger integerProperty;
-@property (assign, nonatomic) BOOL         boolProperty;
-@property (assign, nonatomic) double     doubleProperty;
-@property (assign, nonatomic) CGPoint     pointProperty;
-@property (assign, nonatomic) CGRect       rectProperty;
-@property (assign, nonatomic) NSRange     rangeProperty;
+
+@property (assign, nonatomic) char          charProperty;
+@property (assign, nonatomic) int            intProperty;
+@property (assign, nonatomic) short        shortProperty;
+@property (assign, nonatomic) long          longProperty;
+@property (assign, nonatomic) long long longLongProperty;
+
+@property (assign, nonatomic) unsigned char          unsignedCharProperty;
+@property (assign, nonatomic) unsigned int            unsignedIntProperty;
+@property (assign, nonatomic) unsigned short        unsignedShortProperty;
+@property (assign, nonatomic) unsigned long          unsignedLongProperty;
+@property (assign, nonatomic) unsigned long long unsignedLongLongProperty;
+
+@property (assign, nonatomic) BOOL    boolProperty;
+@property (assign, nonatomic) bool stdBoolProperty;
+
+@property (assign, nonatomic) float   floatProperty;
+@property (assign, nonatomic) double doubleProperty;
+
+@property (assign, nonatomic) NSRange rangeProperty;
 
 @end
 
