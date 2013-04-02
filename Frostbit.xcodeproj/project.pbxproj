@@ -27,6 +27,8 @@
 		5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
 		5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87A16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m */; };
 		5DC5DBD3170A7E4100741241 /* FRBKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */; };
+		5DC5DBD6170B204800741241 /* FRBKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */; };
+		5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD8170B206500741241 /* FRBTestKeyedSet.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
@@ -80,6 +82,8 @@
 		5DC5DBD1170A7E4100741241 /* FRBKeyedSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedSet.h; sourceTree = "<group>"; };
 		5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedSet.m; sourceTree = "<group>"; };
 		5DC5DBD4170A810D00741241 /* FRBDataStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBDataStructures.h; sourceTree = "<group>"; };
+		5DC5DBD7170B206500741241 /* FRBTestKeyedSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestKeyedSet.h; sourceTree = "<group>"; };
+		5DC5DBD8170B206500741241 /* FRBTestKeyedSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestKeyedSet.m; sourceTree = "<group>"; };
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
@@ -213,6 +217,15 @@
 			path = FRBKeyedSet;
 			sourceTree = "<group>";
 		};
+		5DC5DBD5170B202C00741241 /* FRBKeyedSet */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5DBD7170B206500741241 /* FRBTestKeyedSet.h */,
+				5DC5DBD8170B206500741241 /* FRBTestKeyedSet.m */,
+			);
+			name = FRBKeyedSet;
+			sourceTree = "<group>";
+		};
 		5DC632951689D5BD000ED53C = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +281,7 @@
 		5DC632BA1689D5BD000ED53C /* FrostbitTests */ = {
 			isa = PBXGroup;
 			children = (
+				5DC5DBD5170B202C00741241 /* FRBKeyedSet */,
 				5DC0C87716E21685006ED854 /* Managed Objects */,
 				5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */,
 				5DC63352168A150C000ED53C /* FRBTestGeometryPointFunctions.m */,
@@ -566,6 +580,8 @@
 				5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */,
 				5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */,
 				5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */,
+				5DC5DBD6170B204800741241 /* FRBKeyedSet.m in Sources */,
+				5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

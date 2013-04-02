@@ -8,13 +8,18 @@
 
 #import "FRBDataStructures.h"
 
+// TODO: add NSCopying
+// TODO: add NSCoding
+// TODO: add other FRBKeyedSet interaction (union, minus etc.)
+// TODO: add other initializers
+// TODO: add fast enumeration (for ... in)
+// TODO: add documentation
 
 #pragma mark -
 #pragma mark Typedefs
 
 typedef id<NSCopying> FRBKeyedSetKey;
-
-typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key);
+typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key, BOOL *stop);
 
 
 #pragma mark -
@@ -22,18 +27,30 @@ typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key);
 
 @interface FRBKeyedSet : NSObject
 
-- (id) init; ///< Designated initializer
+- (id) init; ///< Designated initializer; creates an empty keyed set
+
+
+#pragma mark adding objects
 
 - (void) addObject: (id) object forKey: (FRBKeyedSetKey) key;
 
-// TODO: - (void) addObjectsFromArray: (NSArray *) array forKey: (FRBKeyedSetKey) key;
-// TODO: - (void) addObjectsFromSet: (NSSet *) set forKey: (FRBKeyedSetKey *) key;
-// TODO: - (void) addObjectsFromDictionary: (NSDictionary *) dictionary;
+- (void) addObjectsFromArray: (NSArray *) array forKey: (FRBKeyedSetKey) key;
+
+- (void) addObjectsFromSet: (NSSet *) set forKey: (FRBKeyedSetKey) key;
+
+- (void) addObjectsFromDictionary: (NSDictionary *) dictionary;
 
 
+#pragma mark counting objects
 
 - (NSUInteger) countForKey: (FRBKeyedSetKey) key;
 - (NSUInteger) count;
+
+
+#pragma mark getting objects
+
+- (BOOL) containsObject: (id) object;
+- (BOOL) containsObject: (id) object forKey: (FRBKeyedSetKey) key;
 
 - (NSArray *) arrayOfObjectsForKey: (FRBKeyedSetKey) key;
 - (NSSet *)     setOfObjectsForKey: (FRBKeyedSetKey) key;
@@ -42,12 +59,19 @@ typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key);
 - (NSSet   *)   setOfAllObjects;
 - (NSArray *) arrayOfAllObjects;
 
+
+#pragma mark object removal
+
 - (void) removeAllObjects;
 - (void) removeAllObjectsForKey: (FRBKeyedSetKey) key;
 - (void) removeObject: (id) object;
+- (void) removeObject: (id) object forKey: (FRBKeyedSetKey) key;
 
-// TODO: - (void) removeObjectsFromArray: (NSArray *) array;
-// TODO: - (void) removeObjectsFromSet: (NSSet *) set;
+- (void) removeObjectsFromArray: (NSArray *) array;
+- (void) removeObjectsFromSet: (NSSet *) set;
+
+
+#pragma mark enumeration
 
 - (void) enumerateObjectsUsingBlock: (FRBKeyedSetKeyObjectEnumerator) enumerator;
 
