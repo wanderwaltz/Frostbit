@@ -23,8 +23,7 @@
              [Object class])
 
 
-/* A variation of FRB_AssertClass, but will not fail for nil objects.
- */
+// A variation of FRB_AssertClass, but will not fail for nil objects.
 #define FRB_AssertClassOrNil(Object, Class) \
     NSAssert(((Object == nil) || [Object isKindOfClass: [Class class]]), \
              @"Expected " @#Object " to be of class " @#Class @", got %@ instead", \
@@ -49,23 +48,39 @@
              Object, NSStringFromSelector(Selector))
 
 
-/* Always failing assertion with a self-describing name.
- */
+// Always failing assertion with a self-describing name.
 #define FRB_ShouldNeverHappen(Description, ...) \
     NSAssert(NO, Description, ##__VA_ARGS__)
 
 
 
-/* Asserts that the Object is not nil.
- */
+// Asserts that the Object is not nil.
 #define FRB_AssertNotNil(Object) \
     NSAssert(Object != nil, @"")
 
 
-/* Asserts that Object conforms to the Protocol provided.
- */
+// Asserts that Object conforms to the Protocol provided.
 #define FRB_AssertConformsTo(Object, Protocol) \
     NSAssert([Object conformsToProtocol: @protocol(Protocol)],\
              @"Expected " @#Object " (%@) to conform to protocol " @#Protocol, Object)
+
+
+// Asserts that Object responds to Selector provided
+#define FRB_AssertRespondsTo(Object, Selector)\
+    NSAssert([Object respondsToSelector: Selector],\
+             @"Expected " @#Object " (%@) to respond to " @#Selector, Object)
+
+
+// Asserts that the inequality Left <= X < Right is true
+#define FRB_AssertIntegerRange_LE_X_L(Left, X, Right)\
+    NSAssert((Left <= X) && (X < Right), @"Expected %d <= " @#X " < %d, got %d", Left, Right, X) 
+
+// Asserts that the inequality Left <= X <= Right is true
+#define FRB_AssertIntegerRange_LE_X_LE(Left, X, Right)\
+    NSAssert((Left <= X) && (X <= Right), @"Expected %d <= " @#X " <= %d, got %d", Left, Right, X)
+
+// Asserts that a certain X is > 0
+#define FRB_AssertIntegerPositive(X)\
+    NSAssert((X > 0), @"Expected " @#X @" > 0")
 
 #endif
