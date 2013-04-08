@@ -48,7 +48,9 @@ through the project.
 * **CommonCrypto** - SHA1, MD5, Base64 as simple C functions and `NSString`, `NSData` categories for these.
 
 * **DataStructures** - some special case data structures such as `FRBKeyedSet` for example which is a 
-dictionary of `NSSets` and was created for a single purpose, but still seems worthy to be included here.
+dictionary of `NSSets` and was created for a single purpose, but still seems worthy to be included here as 
+at some point more uses for this kind of data structure may be found.
+
 * **Dispatch** - GCD-related stuff and dispatching messages between objects. Currently contains the following:
     
     * *FRBDispatchFunctions* - contains GCD-based functions which implement `switch`-like constructions 
@@ -60,14 +62,14 @@ dictionary of `NSSets` and was created for a single purpose, but still seems wor
     with the actual message being sent depending on the arbitrary `NSCopying`-compliant key. Another system
     which allows making a switch-like constructs for running code, but now `@selector`-based.
 
-* **Geometry** - A couple of nice little functions for manipulating `CGPoint`s, `CGRect`s and `CGSize`s. All of these
+* **Geometry** - A couple of nice little functions for manipulating `CGPoints`, `CGRects` and `CGSizes`. All of these
 are aliased to their FRB-prefixed cousins. So maybe at some point we'll go away from the Core Graphics and implement
 these as fully custom structs.
 
 * **ManagedObjects** - Not to confuse with `NSManagedObject`, not related to Core Data in any way. This module
 contains a class which implements `NSDictionary`-based key-value storage with dynamic property accessor implementation.
 So you generally can make a property, then add `@dynamic propertyName;` in the .m file and have this property's value 
-stored in an internal `NSDictionary` maintained by `FRBManagedObject`. Seems useful for small model classes which
+stored in a `NSDictionary` ivar maintained by `FRBManagedObject`. Seems useful for small model classes which
 contain almost no methods, but a lot of properties.
 
 * **UIKit** - UIKit-dependent small or not very small UI components.
