@@ -8,10 +8,6 @@
 
 #import "FRBDataStructures.h"
 
-// TODO: add NSCopying
-// TODO: add NSCoding
-// TODO: add other FRBKeyedSet interaction (union, minus etc.)
-// TODO: add other initializers
 // TODO: add fast enumeration (for ... in)
 // TODO: add documentation
 
@@ -25,9 +21,14 @@ typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key, BO
 #pragma mark -
 #pragma mark FRBKeyedSet interface
 
-@interface FRBKeyedSet : NSObject
+@interface FRBKeyedSet : NSObject<NSCopying, NSMutableCopying, NSCoding>
+
+/// Default: NO
+@property (assign, nonatomic) BOOL suppressNilArgumentExceptions;
 
 - (id) init; ///< Designated initializer; creates an empty keyed set
+- (id) initWithKeyedSet: (FRBKeyedSet *) keyedSet;
+- (id) initWithDictionary: (NSDictionary *) dictionary;
 
 
 #pragma mark adding objects
@@ -77,5 +78,12 @@ typedef void (^FRBKeyedSetKeyObjectEnumerator)(id object, FRBKeyedSetKey key, BO
 
 - (void) enumerateObjectsForKey: (FRBKeyedSetKey) key
                      usingBlock: (FRBKeyedSetKeyObjectEnumerator) enumerator;
+
+
+#pragma mark keyed set operations
+
+- (void) unionKeyedSet:     (FRBKeyedSet *) keyedSet;
+- (void) minusKeyedSet:     (FRBKeyedSet *) keyedSet;
+- (void) intersectKeyedSet: (FRBKeyedSet *) keyedSet;
 
 @end
