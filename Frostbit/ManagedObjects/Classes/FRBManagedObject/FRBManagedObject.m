@@ -248,13 +248,20 @@ static const void * const kKeyPropertyTypeForSelector = &kKeyPropertyTypeForSele
         dynamicPropertyNameForSelector[getterName] = stringName;
         dynamicPropertyNameForSelector[setterName] = stringName;
         
+        // This is needed since type encoding for Objective-C classes
+        // includes the class name, so for NSString the type encoding
+        // would be @"NSString", but we do not want to include the
+        // class name into type encoding for accessor methods or the
+        // KVC will not treat the class as KVC-compliant.
+        if ([typeEncoding characterAtIndex: 0] == '@')
+            typeEncoding = [typeEncoding substringToIndex: 1];
+        
         // Add instance methods for the current property
         NSString *getterTypeEncoding =
         [NSString stringWithFormat: @"%@@:", typeEncoding];
         
         NSString *setterTypeEncoding =
         [NSString stringWithFormat: @"v@:%@", typeEncoding];
-        
         
         // For some reason making a single implementation of a getter and a setter which would
         // work with all data types seems not possible. So I had to implement a separate getter/setter

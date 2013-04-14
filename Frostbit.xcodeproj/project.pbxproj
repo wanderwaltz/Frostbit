@@ -24,18 +24,17 @@
 		5D63983B171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D63983A171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m */; };
 		5D639846171AAF5F00CFECC1 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63983D171AAF5F00CFECC1 /* libOCMock.a */; };
 		5D639847171AAF5F00CFECC1 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5D63983E171AAF5F00CFECC1 /* License.txt */; };
+		5D639849171AB0DA00CFECC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D639848171AB0DA00CFECC1 /* UIKit.framework */; };
+		5D63984B171AB1AB00CFECC1 /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
 		5DC0B2BA168CD3DD0035A910 /* FRBKeyedTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */; };
 		5DC0C87316E21649006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
 		5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87516E2167F006ED854 /* FRBTestManagedObjectBasic.m */; };
-		5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87216E21649006ED854 /* FRBManagedObject.m */; };
 		5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC0C87A16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m */; };
 		5DC5DBD3170A7E4100741241 /* FRBKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */; };
-		5DC5DBD6170B204800741241 /* FRBKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */; };
 		5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD8170B206500741241 /* FRBTestKeyedSet.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
-		5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
 		5DC632BF1689D5BD000ED53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DC632BD1689D5BD000ED53C /* InfoPlist.strings */; };
 		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
 		5DC632D21689D6CB000ED53C /* FRBRectFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632D11689D6CB000ED53C /* FRBRectFunctions.m */; };
@@ -83,6 +82,7 @@
 		5D639843171AAF5F00CFECC1 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		5D639844171AAF5F00CFECC1 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		5D639845171AAF5F00CFECC1 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		5D639848171AB0DA00CFECC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DBD566E169717BA00728BB4 /* FRBGeometryTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBGeometryTypes.h; sourceTree = "<group>"; };
 		5DC0B2B8168CD3DD0035A910 /* FRBKeyedTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBKeyedTargetAction.h; sourceTree = "<group>"; };
 		5DC0B2B9168CD3DD0035A910 /* FRBKeyedTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBKeyedTargetAction.m; sourceTree = "<group>"; };
@@ -149,9 +149,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D63984B171AB1AB00CFECC1 /* libFrostbit.a in Frameworks */,
+				5D639849171AB0DA00CFECC1 /* UIKit.framework in Frameworks */,
 				5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */,
 				5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */,
-				5DC632B91689D5BD000ED53C /* libFrostbit.a in Frameworks */,
 				5D639846171AAF5F00CFECC1 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +288,7 @@
 		5DC632A21689D5BD000ED53C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D639848171AB0DA00CFECC1 /* UIKit.framework */,
 				5DC63368168A2A0B000ED53C /* CoreGraphics.framework */,
 				5DC632A31689D5BD000ED53C /* Foundation.framework */,
 				5DC632B21689D5BD000ED53C /* SenTestingKit.framework */,
@@ -619,9 +621,7 @@
 			files = (
 				5DC63353168A150C000ED53C /* FRBTestGeometryPointFunctions.m in Sources */,
 				5DC0C87616E2167F006ED854 /* FRBTestManagedObjectBasic.m in Sources */,
-				5DC0C87816E216CE006ED854 /* FRBManagedObject.m in Sources */,
 				5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */,
-				5DC5DBD6170B204800741241 /* FRBKeyedSet.m in Sources */,
 				5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */,
 				5D63983B171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m in Sources */,
 			);
@@ -742,6 +742,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FrostbitTests/OCMock\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -765,6 +766,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/FrostbitTests/OCMock\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

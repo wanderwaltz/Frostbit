@@ -14,7 +14,9 @@
 
 @interface FRBTestManagedObjectKVOHelper : FRBManagedObject
 
-@property (strong, nonatomic) NSString  *stringProperty;
+@property (strong, nonatomic) NSString *stringProperty;
+@property (assign, nonatomic) NSInteger integerProperty;
+@property (assign, nonatomic) NSRange   rangeProperty;
 
 @end
 
