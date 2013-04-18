@@ -9,7 +9,8 @@ Pod::Spec.new do |spec|
 	spec.summary      = 'A multi-purpose Objective-C library for use with Cocoa Touch projects mostly.'
 	
 	spec.platform     = :ios, '6.0'
-	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :commit => :head }
+	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :tag => '0.0.1' }
+	#spec.source       = { :git => '.', :tag => '0.0.1', :branch => 'develop' }
 
 	# Subspecs (modules)
 	spec.subspec 'Common' do |common|
@@ -26,6 +27,24 @@ Pod::Spec.new do |spec|
     	dispatch.source_files = 'Frostbit/Dispatch/**/*.{h,m}'
     	dispatch.requires_arc = true
 	end
+
+
+	spec.subspec 'DataStructures' do |dataStructures|
+		dataStructures.source_files = 'Frostbit/DataStructures/*.{h,m}'
+		dataStructures.requires_arc = true
+
+		dataStructures.subspec 'FRBKeyedSet' do |keyedSet|
+			keyedSet.source_files = 'Frostbit/DataStructures/Classes/FRBKeyedSet/*.{h,m}'
+		end
+	end
+
+
+	spec.subspec 'ManagedObjects' do |managedObjects|
+		managedObjects.source_files = 'Frostbit/ManagedObjects/**/*.{h,m}'
+		managedObjects.requires_arc = true
+	end
+
+
 
 	# CommonCrypto subspec contains functions for easy access of
 	# the <CommonCrypto/CommonDigest.h> functionality. 
