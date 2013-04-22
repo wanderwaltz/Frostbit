@@ -45,8 +45,8 @@ static NSString * const kParsedStyleNameKey  = @"name";
         
         for (NSDictionary *style in parsedStyles)
         {
-            [self addStyleWithName:  [style objectForKey:  kParsedStyleNameKey] 
-                             range: [[style objectForKey: kParsedStyleRangeKey] rangeValue]
+            [self addStyleWithName:  style[ kParsedStyleNameKey]
+                             range: [style[kParsedStyleRangeKey] rangeValue]
                           toString: attributed
                       inlineStyles: inlineStyles];
         }
@@ -104,7 +104,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
               forStyleName: (NSString *) style
 {
     NSMutableDictionary *attributes = [self styleForName: style];
-    [attributes setObject: [NSNumber numberWithInt: underlineStyle]
+    [attributes setObject: @(underlineStyle)
                    forKey: (__bridge id)kCTUnderlineStyleAttributeName];
 }
 
@@ -174,12 +174,12 @@ static NSString * const kParsedStyleNameKey  = @"name";
     if (style == nil) style = [NSNull null];
     
     NSMutableDictionary *allStyles  = [self allStyles];
-    NSMutableDictionary *dictionary = [allStyles objectForKey: style];
+    NSMutableDictionary *dictionary =  allStyles[style];
     
     if (dictionary == nil)
     {
         dictionary = [NSMutableDictionary dictionary];
-        [allStyles setObject: dictionary forKey: style];
+        allStyles[style] = dictionary;
     }
     
     return dictionary;
@@ -192,7 +192,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
              inlineStyles: (NSDictionary *) inlineStyles
 {
     // Inline styles always have precedence 
-    NSDictionary *attributes = [inlineStyles objectForKey: style];
+    NSDictionary *attributes = inlineStyles[style];
     
     if (attributes == nil)
     {
@@ -232,15 +232,14 @@ static NSString * const kParsedStyleNameKey  = @"name";
     __strong static NSDictionary *dictionary = nil;
     
     dispatch_once(&predicate, ^{
-        dictionary = 
-        [NSDictionary dictionaryWithObjectsAndKeys:
-         
-         // Underline styles mapping
-         [NSNumber numberWithInt: kCTUnderlineStyleSingle], @"single", 
-         [NSNumber numberWithInt: kCTUnderlineStyleThick ],  @"thick", 
-         [NSNumber numberWithInt: kCTUnderlineStyleDouble], @"double", 
-         [NSNumber numberWithInt: kCTUnderlineStyleNone  ],   @"none", 
-         nil];
+        
+        dictionary =
+        @{
+          @"single" : @(kCTUnderlineStyleSingle),
+           @"thick" : @(kCTUnderlineStyleThick),
+          @"double" : @(kCTUnderlineStyleDouble),
+            @"none" : @(kCTUnderlineStyleNone)
+        };
     });
     return dictionary;
 }
@@ -250,8 +249,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark -
 #pragma mark private: parser
 
-/* A simple hex string parser (RGB without alpha) 
- */
+// A simple hex string parser (RGB without alpha)
 + (UIColor *) colorFromString: (NSString *) string
 {
     NSScanner *scanner = [NSScanner scannerWithString: string];
@@ -321,8 +319,8 @@ static NSString * const kParsedStyleNameKey  = @"name";
         
         if (components.count == 2)
         {
-            NSString *attributeName  = [components objectAtIndex: 0];
-            NSString *attributeValue = [components objectAtIndex: 1];
+            NSString *attributeName  = components[0];
+            NSString *attributeValue = components[1];
             
             attributeName  = [attributeName  stringByTrimmingCharactersInSet: trimSet];
             attributeValue = [attributeValue stringByTrimmingCharactersInSet: trimSet];
@@ -358,27 +356,26 @@ static NSString * const kParsedStyleNameKey  = @"name";
                    special interpretation of their values.
                  */
                 NSString *translatedName = 
-                [[self attributeNameTranslation] objectForKey: attributeName];
+                [self attributeNameTranslation][attributeName];
                 
                 id translatedValue = 
-                [[self attributeValueTranslation] objectForKey: attributeValue];
+                [self attributeValueTranslation][attributeValue];
                 
                 // Support undefined attributes by passing the exact name/value we've received
                 if (translatedName  == nil) translatedName  = attributeName;
                 if (translatedValue == nil) translatedValue = attributeValue;
                 
-                [attributes setObject: translatedValue forKey: translatedName];
+                attributes[translatedName] = translatedValue;
             }
         }
         else // Assume attributes with no values are bool attributes
         {
-            NSString *attributeName = [components objectAtIndex: 0];
+            NSString *attributeName = components[0];
             attributeName = [attributeName stringByTrimmingCharactersInSet: trimSet];
 
             if (attributeName.length > 0)
             {
-                [attributes setObject: [NSNumber numberWithBool: YES] 
-                               forKey: attributeName];
+                attributes[attributeName] = @YES;
             }
         }
     }
@@ -570,7 +567,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
                              
                              
                              
-                             styleName = [[[styleComponents objectAtIndex: 0] 
+                             styleName = [[styleComponents[0]
                                            stringByTrimmingCharactersInSet: trimSet] 
                                           mutableCopy];
                              
@@ -582,7 +579,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
                              
                              
                              NSString *inlineStyle = 
-                             [[styleComponents objectAtIndex: 1]
+                             [styleComponents[1]
                               stringByTrimmingCharactersInSet: trimSet];
                              
                              NSDictionary *attributes = [self parseInlineStyle: inlineStyle];
@@ -591,8 +588,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
                               */
                              if (attributes != nil)
                              {
-                                 [inlineStyles setObject: attributes 
-                                                  forKey: styleName];
+                                 inlineStyles[styleName] = attributes;
                              }
                          }
                          else
@@ -653,11 +649,11 @@ static NSString * const kParsedStyleNameKey  = @"name";
                          NSRange range = [[styleRangesStack lastObject] rangeValue];
                          range.length  = plainText.length - range.location;
                          
-                         [parsedStyles insertObject: 
-                          [NSDictionary dictionaryWithObjectsAndKeys:
-                           [NSValue valueWithRange: range], kParsedStyleRangeKey, 
-                           styleName, kParsedStyleNameKey, nil]
-                                            atIndex: 0];
+                         [parsedStyles insertObject:
+                          @{
+                               kParsedStyleNameKey  : styleName,
+                               kParsedStyleRangeKey : [NSValue valueWithRange: range]
+                          } atIndex: 0];
                          
                          [styleNamesStack  removeLastObject];
                          [styleRangesStack removeLastObject];
