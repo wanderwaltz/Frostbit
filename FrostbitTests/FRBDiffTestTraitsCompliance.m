@@ -1,5 +1,5 @@
 //
-//  FRBTestTraitsCompliance.m
+//  FRBDiffTestTraitsCompliance.m
 //  Frostbit
 //
 //  Created by Egor Chiglintsev on 4/23/13.
@@ -10,13 +10,13 @@
 #error "This file should be compiled with ARC support"
 #endif
 
-#import "FRBTestTraitsCompliance.h"
+#import "FRBDiffTestTraitsCompliance.h"
 
 
 #pragma mark -
-#pragma mark FRBTestTraitsCompliance implementation
+#pragma mark FRBDiffTestTraitsCompliance implementation
 
-@implementation FRBTestTraitsCompliance
+@implementation FRBDiffTestTraitsCompliance
 
 - (void) testDictionaryCompliance
 {

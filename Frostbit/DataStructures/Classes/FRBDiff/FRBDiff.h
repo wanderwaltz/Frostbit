@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "FRBDictionaryTraits.h"
 
 #pragma mark -
 #pragma mark FRBDiff interface
 
 @interface FRBDiff : NSObject
+
+- (BOOL) hasDifferences;
+
+- (id) initWithOldRevision: (id) oldRevision
+               newRevision: (id) newRevision;
+
 @end

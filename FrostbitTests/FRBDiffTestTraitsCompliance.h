@@ -1,5 +1,5 @@
 //
-//  FRBTestTraitsCompliance.h
+//  FRBDiffTestTraitsCompliance.h
 //  Frostbit
 //
 //  Created by Egor Chiglintsev on 4/23/13.
@@ -10,7 +10,7 @@
 #import "FRBDictionaryTraits.h"
 
 #pragma mark -
-#pragma mark FRBTestTraitsCompliance interface
+#pragma mark FRBDiffTestTraitsCompliance interface
 
-@interface FRBTestTraitsCompliance : SenTestCase
+@interface FRBDiffTestTraitsCompliance : SenTestCase
 @end

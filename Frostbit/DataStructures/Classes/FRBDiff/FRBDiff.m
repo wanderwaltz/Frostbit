@@ -17,4 +17,29 @@
 #pragma mark FRBDiff implementation
 
 @implementation FRBDiff
+
+#pragma mark -
+#pragma mark initialization methods
+
+- (id) initWithOldRevision: (id) oldRevision
+               newRevision: (id) newRevision
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        
+    }
+    return self;
+}
+
+
+#pragma mark -
+#pragma mark methods
+
+- (BOOL) hasDifferences
+{
+    return NO;
+}
+
 @end
