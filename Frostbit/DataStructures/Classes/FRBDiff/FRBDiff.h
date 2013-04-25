@@ -14,6 +14,10 @@
 
 @interface FRBDiff : NSObject
 
+@property (readonly, nonatomic) NSSet   *addedKeys;
+@property (readonly, nonatomic) NSSet *removedKeys;
+@property (readonly, nonatomic) NSSet *updatedKeys;
+
 - (BOOL) hasDifferences;
 
 - (id) initWithOldRevision: (id) oldRevision

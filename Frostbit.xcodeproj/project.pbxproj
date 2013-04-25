@@ -52,6 +52,7 @@
 		7C3943F417265E3B000BC703 /* FRBDiffTestTraitsCompliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943F317265E3B000BC703 /* FRBDiffTestTraitsCompliance.m */; };
 		7C3943F817265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943F717265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m */; };
 		7C3943FB1726641A000BC703 /* FRBDiffTestTrivial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */; };
+		7C94F87A1729146B00C7BA78 /* FRBDiffTestDictionarySimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */; };
 		7CA4A48017253FC500C36E4D /* FRBTestAttributedStringErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */; };
 		7CA4A48117253FC500C36E4D /* FRBTestAttributedStringEscapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47917253FC500C36E4D /* FRBTestAttributedStringEscapes.m */; };
 		7CA4A48217253FC500C36E4D /* FRBAttributedStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47B17253FC500C36E4D /* FRBAttributedStringTest.m */; };
@@ -156,6 +157,8 @@
 		7C3943F717265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FRBDictionaryTraitsCompliance.m"; sourceTree = "<group>"; };
 		7C3943F91726641A000BC703 /* FRBDiffTestTrivial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestTrivial.h; sourceTree = "<group>"; };
 		7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestTrivial.m; sourceTree = "<group>"; };
+		7C94F8781729146B00C7BA78 /* FRBDiffTestDictionarySimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestDictionarySimple.h; sourceTree = "<group>"; };
+		7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestDictionarySimple.m; sourceTree = "<group>"; };
 		7CA4A47617253FC500C36E4D /* FRBTestAttributedStringErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringErrors.h; sourceTree = "<group>"; };
 		7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringErrors.m; sourceTree = "<group>"; };
 		7CA4A47817253FC500C36E4D /* FRBTestAttributedStringEscapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringEscapes.h; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 				7C3943F317265E3B000BC703 /* FRBDiffTestTraitsCompliance.m */,
 				7C3943F91726641A000BC703 /* FRBDiffTestTrivial.h */,
 				7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */,
+				7C94F8781729146B00C7BA78 /* FRBDiffTestDictionarySimple.h */,
+				7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */,
 			);
 			name = FRBDiff;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				7CA4A48417253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m in Sources */,
 				7C3943F417265E3B000BC703 /* FRBDiffTestTraitsCompliance.m in Sources */,
 				7C3943FB1726641A000BC703 /* FRBDiffTestTrivial.m in Sources */,
+				7C94F87A1729146B00C7BA78 /* FRBDiffTestDictionarySimple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
