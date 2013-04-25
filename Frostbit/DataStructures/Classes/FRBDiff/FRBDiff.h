@@ -14,9 +14,9 @@
 
 @interface FRBDiff : NSObject
 
-@property (readonly, nonatomic) NSSet   *addedKeys;
-@property (readonly, nonatomic) NSSet *removedKeys;
-@property (readonly, nonatomic) NSSet *updatedKeys;
+@property (readonly, nonatomic) NSSet   *addedKeyPaths;
+@property (readonly, nonatomic) NSSet *removedKeyPaths;
+@property (readonly, nonatomic) NSSet *updatedKeyPaths;
 
 - (BOOL) hasDifferences;
 

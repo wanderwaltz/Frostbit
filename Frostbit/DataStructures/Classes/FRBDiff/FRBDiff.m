@@ -43,9 +43,9 @@
 
 - (BOOL) hasDifferences
 {
-    return (_addedKeys.count   > 0) ||
-           (_removedKeys.count > 0) ||
-           (_updatedKeys.count > 0);
+    return (_addedKeyPaths.count   > 0) ||
+           (_removedKeyPaths.count > 0) ||
+           (_updatedKeyPaths.count > 0);
 }
 
 
@@ -67,21 +67,60 @@
     NSMutableSet *commonKeys = [oldKeys mutableCopy];
     [commonKeys intersectSet: newKeys];
     
-    _addedKeys   = [addedKeys   copy];
-    _removedKeys = [removedKeys copy];
-    
     NSMutableSet *updatedKeys = [commonKeys mutableCopy];
     
-    for (id key in commonKeys)
+    @autoreleasepool
     {
-        if ([[newRevision objectForKey: key] isEqual:
-             [oldRevision objectForKey: key]])
+        for (id key in commonKeys)
         {
-            [updatedKeys removeObject: key];
+            id oldValue = [oldRevision objectForKey: key];
+            id newValue = [newRevision objectForKey: key];
+            
+            if ([oldValue conformsToProtocol: @protocol(FRBDictionaryTraits)] &&
+                [newValue conformsToProtocol: @protocol(FRBDictionaryTraits)])
+            {
+                FRBDiff *nestedDiff = [[FRBDiff alloc] initWithOldRevision: oldValue
+                                                               newRevision: newValue];
+                
+                if (nestedDiff.hasDifferences)
+                {
+                    for (id keyPath in nestedDiff.addedKeyPaths)
+                    {
+                        [addedKeys addObject:
+                         [NSString stringWithFormat: @"%@.%@", key, keyPath]];
+                    }
+                    
+                    for (id keyPath in nestedDiff.removedKeyPaths)
+                    {
+                        [removedKeys addObject:
+                         [NSString stringWithFormat: @"%@.%@", key, keyPath]];
+                    }
+                    
+                    for (id keyPath in nestedDiff.updatedKeyPaths)
+                    {
+                        [updatedKeys addObject:
+                         [NSString stringWithFormat: @"%@.%@", key, keyPath]];
+                    }
+                }
+                else
+                {
+                    [updatedKeys removeObject: key];
+                }
+            }
+            else
+            {
+                
+            } if ([[newRevision objectForKey: key] isEqual:
+                   [oldRevision objectForKey: key]])
+            {
+                [updatedKeys removeObject: key];
+            }
         }
-    }
+    };
     
-    _updatedKeys = [updatedKeys copy];
+    _addedKeyPaths   = [addedKeys   copy];
+    _removedKeyPaths = [removedKeys copy];
+    _updatedKeyPaths = [updatedKeys copy];
 }
 
 

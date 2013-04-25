@@ -67,41 +67,41 @@
 }
 
 
-- (void) testRemovedKeys
+- (void) testRemovedKeyPaths
 {
     id old = @{ @"key" : @"value" };
     id new = @{};
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.removedKeys containsObject: @"key"],
-                 @"removedKeys should contain all keys which were removed "
+    STAssertTrue([diff.removedKeyPaths containsObject: @"key"],
+                 @"removedKeyPaths should contain all keys which were removed "
                  @"from the new revision");
 }
 
 
-- (void) testAddedKeys
+- (void) testAddedKeyPaths
 {
     id old = @{};
     id new = @{ @"key" : @"value" };
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.addedKeys containsObject: @"key"],
-                 @"addedKeys should contain all keys which were added "
+    STAssertTrue([diff.addedKeyPaths containsObject: @"key"],
+                 @"addedKeyPaths should contain all keys which were added "
                  @"to the new revision");
 }
 
 
-- (void) testUpdatedKeys
+- (void) testUpdatedKeyPaths
 {
     id old = @{ @"key" : @"value"};
     id new = @{ @"key" : @"other value" };
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeys containsObject: @"key"],
-                 @"updatedKeys should contain all keys whose values were updated "
+    STAssertTrue([diff.updatedKeyPaths containsObject: @"key"],
+                 @"updatedKeyPaths should contain all keys whose values were updated "
                  @"in the new revision");
 }
 
