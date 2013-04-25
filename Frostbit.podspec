@@ -12,10 +12,14 @@ Pod::Spec.new do |spec|
 	spec.source       = { :git => 'https://github.com/wanderwaltz/Frostbit.git', :tag => '0.0.1' }
 	#spec.source       = { :git => '.', :tag => '0.0.1', :branch => 'develop' }
 
-	spec.source_files = 'Frostbit/*.{h,m}'
 
 	# Subspecs (modules)
+	spec.subspec 'Headers' do |headers|
+		headers.source_files = 'Frostbit/*.{h}'
+	end
+
 	spec.subspec 'Common' do |common|
+		common.dependency 'Frostbit/Headers'
 		common.source_files = 'Frostbit/Common/**/*.{h,m}'
 		common.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_COMMON_INCLUDED=1' }
 	end
@@ -38,11 +42,15 @@ Pod::Spec.new do |spec|
 
 	spec.subspec 'DataStructures' do |dataStructures|
 		dataStructures.dependency 'Frostbit/Common'
-		dataStructures.source_files = 'Frostbit/DataStructures/*.{h,m}'
 		dataStructures.requires_arc = true
 		dataStructures.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_DATA_STRUCTURES_INCLUDED=1' }
 
+		dataStructures.subspec 'Headers' do |headers|
+			headers.source_files = 'Frostbit/DataStructures/*.h'
+		end
+
 		dataStructures.subspec 'FRBKeyedSet' do |keyedSet|
+			keyedSet.dependency 'Frostbit/DataStructures/Headers'
 			keyedSet.source_files = 'Frostbit/DataStructures/Classes/FRBKeyedSet/*.{h,m}'
 			keyedSet.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_KEYED_SET_INCLUDED=1' }
 		end
@@ -62,16 +70,21 @@ Pod::Spec.new do |spec|
 	# the <CommonCrypto/CommonDigest.h> functionality. 
 	spec.subspec 'CommonCrypto' do |commonCrypto|
 		commonCrypto.dependency 'Frostbit/Common'
-		commonCrypto.source_files = 'Frostbit/CommonCrypto/*.{h,m}'
 		commonCrypto.requires_arc = true
 		commonCrypto.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_COMMON_CRYPTO_INCLUDED=1' }
 
+		commonCrypto.subspec 'Headers' do |headers|
+			headers.source_files = 'Frostbit/CommonCrypto/*.h'
+		end
+
 		commonCrypto.subspec 'Functions' do |functions|
+			functions.dependency 'Frostbit/CommonCrypto/Headers'
 			functions.source_files = 'Frostbit/CommonCrypto/Functions/**/*.{h,m}'
 			functions.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_COMMON_CRYPTO_FUNCTIONS_INCLUDED=1' }
 		end
 
 		commonCrypto.subspec 'Categories' do |categories|
+			categories.dependency 'Frostbit/CommonCrypto/Headers'
 			categories.xcconfig = { 'OTHER_CFLAGS' => '-DFRB_COMMON_CRYPTO_CATEGORIES_INCLUDED=1' }
 
 			categories.subspec 'NSData' do |nsdata|
@@ -93,13 +106,18 @@ Pod::Spec.new do |spec|
 	# bundles of all UI classes and all UI categories will be available as subspecs
 	spec.subspec 'UIKit' do |uikit|
 		uikit.dependency 'Frostbit/Common'
-		uikit.source_files = 'Frostbit/UIKit/*.{h,m}'
+
 		uikit.framework    = 'UIKit'
 		uikit.requires_arc = true
 		uikit.xcconfig     = { 'OTHER_CFLAGS' => '-DFRB_UIKIT_INCLUDED=1' }
 
+		uikit.subspec 'Headers' do |headers|
+			headers.source_files = 'Frostbit/UIKit/*.{h,m}'
+		end
+
 		# UI classes
 		uikit.subspec 'Classes' do |uiclasses|
+			uiclasses.dependency 'Frostbit/UIKit/Headers'
 			uiclasses.xcconfig = { 'OTHER_CFLAGS' => '-DFRB_UICLASSES_INCLUDED=1' }
 
 			uiclasses.subspec 'FRBDatePickerPopover' do |dpp|
@@ -112,6 +130,7 @@ Pod::Spec.new do |spec|
 
 		# UI categories
 		uikit.subspec 'Categories' do |uicategories|
+			uicategories.dependency 'Frostbit/UIKit/Headers'
 			uicategories.xcconfig = { 'OTHER_CFLAGS' => '-DFRB_UICATEGORIES_INCLUDED=1' }
 
 			uicategories.subspec 'UIViewController' do |vc|
