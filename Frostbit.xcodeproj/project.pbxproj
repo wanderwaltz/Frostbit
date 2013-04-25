@@ -162,6 +162,7 @@
 		7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestDictionarySimple.m; sourceTree = "<group>"; };
 		7C94F87B17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestDictionaryNested.h; sourceTree = "<group>"; };
 		7C94F87C17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestDictionaryNested.m; sourceTree = "<group>"; };
+		7C94F87E1729278C00C7BA78 /* Frostbit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Frostbit.h; sourceTree = "<group>"; };
 		7CA4A47617253FC500C36E4D /* FRBTestAttributedStringErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringErrors.h; sourceTree = "<group>"; };
 		7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringErrors.m; sourceTree = "<group>"; };
 		7CA4A47817253FC500C36E4D /* FRBTestAttributedStringEscapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringEscapes.h; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 		5DC632A51689D5BD000ED53C /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
+				7C94F87E1729278C00C7BA78 /* Frostbit.h */,
 				5DC5DBCE170A7DF500741241 /* DataStructures */,
 				5DC0C86E16E21637006ED854 /* Managed Objects */,
 				5DCC95E4168D9AF3004F8D4E /* UIKit */,
