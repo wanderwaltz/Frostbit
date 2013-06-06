@@ -12,4 +12,8 @@
 #import <Foundation/Foundation.h>
 #import "FRBCommon.h"
 
+#if FRB_KEYED_SET_INCLUDED
+    #import "FRBKeyedSet.h"
+#endif
+
 #endif

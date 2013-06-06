@@ -47,6 +47,21 @@
 		5DC6338A168ACC26000ED53C /* NSString+FRBCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC63389168ACC26000ED53C /* NSString+FRBCommonCrypto.m */; };
 		5DCC9616168DA780004F8D4E /* FRBDatePickerPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */; };
 		5DCC9619168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC9618168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m */; };
+		7C1CC21C17253D3600B64327 /* FRBAttributedStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CC21B17253D3600B64327 /* FRBAttributedStringBuilder.m */; };
+		7C3943EF17265DDD000BC703 /* FRBDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943EE17265DDD000BC703 /* FRBDiff.m */; };
+		7C3943F417265E3B000BC703 /* FRBDiffTestTraitsCompliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943F317265E3B000BC703 /* FRBDiffTestTraitsCompliance.m */; };
+		7C3943F817265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943F717265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m */; };
+		7C3943FB1726641A000BC703 /* FRBDiffTestTrivial.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */; };
+		7C94F87A1729146B00C7BA78 /* FRBDiffTestDictionarySimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */; };
+		7C94F87D17291B4E00C7BA78 /* FRBDiffTestDictionaryNested.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C94F87C17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.m */; };
+		7CA1D58E1760A245003CD396 /* FRBTestMultipleBuilders.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA1D58D1760A244003CD396 /* FRBTestMultipleBuilders.m */; };
+		7CA4A48017253FC500C36E4D /* FRBTestAttributedStringErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */; };
+		7CA4A48117253FC500C36E4D /* FRBTestAttributedStringEscapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47917253FC500C36E4D /* FRBTestAttributedStringEscapes.m */; };
+		7CA4A48217253FC500C36E4D /* FRBAttributedStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47B17253FC500C36E4D /* FRBAttributedStringTest.m */; };
+		7CA4A48317253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47D17253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.m */; };
+		7CA4A48417253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4A47F17253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m */; };
+		7CA4A486172544AA00C36E4D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA4A485172544AA00C36E4D /* CoreText.framework */; };
+		7CA4A487172544B800C36E4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC63368168A2A0B000ED53C /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +148,35 @@
 		5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDatePickerPopover.m; sourceTree = "<group>"; };
 		5DCC9617168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FRBNavigationStack.h"; sourceTree = "<group>"; };
 		5DCC9618168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FRBNavigationStack.m"; sourceTree = "<group>"; };
+		7C1CC21A17253D3600B64327 /* FRBAttributedStringBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBAttributedStringBuilder.h; sourceTree = "<group>"; };
+		7C1CC21B17253D3600B64327 /* FRBAttributedStringBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBAttributedStringBuilder.m; sourceTree = "<group>"; };
+		7C3943ED17265DDD000BC703 /* FRBDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiff.h; sourceTree = "<group>"; };
+		7C3943EE17265DDD000BC703 /* FRBDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiff.m; sourceTree = "<group>"; };
+		7C3943F017265E1A000BC703 /* FRBDictionaryTraits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBDictionaryTraits.h; sourceTree = "<group>"; };
+		7C3943F217265E3B000BC703 /* FRBDiffTestTraitsCompliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestTraitsCompliance.h; sourceTree = "<group>"; };
+		7C3943F317265E3B000BC703 /* FRBDiffTestTraitsCompliance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestTraitsCompliance.m; sourceTree = "<group>"; };
+		7C3943F617265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FRBDictionaryTraitsCompliance.h"; sourceTree = "<group>"; };
+		7C3943F717265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FRBDictionaryTraitsCompliance.m"; sourceTree = "<group>"; };
+		7C3943F91726641A000BC703 /* FRBDiffTestTrivial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestTrivial.h; sourceTree = "<group>"; };
+		7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestTrivial.m; sourceTree = "<group>"; };
+		7C94F8781729146B00C7BA78 /* FRBDiffTestDictionarySimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestDictionarySimple.h; sourceTree = "<group>"; };
+		7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestDictionarySimple.m; sourceTree = "<group>"; };
+		7C94F87B17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBDiffTestDictionaryNested.h; sourceTree = "<group>"; };
+		7C94F87C17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBDiffTestDictionaryNested.m; sourceTree = "<group>"; };
+		7C94F87E1729278C00C7BA78 /* Frostbit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Frostbit.h; sourceTree = "<group>"; };
+		7CA1D58C1760A243003CD396 /* FRBTestMultipleBuilders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestMultipleBuilders.h; sourceTree = "<group>"; };
+		7CA1D58D1760A244003CD396 /* FRBTestMultipleBuilders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestMultipleBuilders.m; sourceTree = "<group>"; };
+		7CA4A47617253FC500C36E4D /* FRBTestAttributedStringErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringErrors.h; sourceTree = "<group>"; };
+		7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringErrors.m; sourceTree = "<group>"; };
+		7CA4A47817253FC500C36E4D /* FRBTestAttributedStringEscapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringEscapes.h; sourceTree = "<group>"; };
+		7CA4A47917253FC500C36E4D /* FRBTestAttributedStringEscapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringEscapes.m; sourceTree = "<group>"; };
+		7CA4A47A17253FC500C36E4D /* FRBAttributedStringTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBAttributedStringTest.h; sourceTree = "<group>"; };
+		7CA4A47B17253FC500C36E4D /* FRBAttributedStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBAttributedStringTest.m; sourceTree = "<group>"; };
+		7CA4A47C17253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringInlineStylesApplication.h; sourceTree = "<group>"; };
+		7CA4A47D17253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringInlineStylesApplication.m; sourceTree = "<group>"; };
+		7CA4A47E17253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestAttributedStringRegisteredStylesApplication.h; sourceTree = "<group>"; };
+		7CA4A47F17253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestAttributedStringRegisteredStylesApplication.m; sourceTree = "<group>"; };
+		7CA4A485172544AA00C36E4D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA4A487172544B800C36E4D /* CoreGraphics.framework in Frameworks */,
+				7CA4A486172544AA00C36E4D /* CoreText.framework in Frameworks */,
 				5D63984B171AB1AB00CFECC1 /* libFrostbit.a in Frameworks */,
 				5D639849171AB0DA00CFECC1 /* UIKit.framework in Frameworks */,
 				5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */,
@@ -243,6 +289,7 @@
 		5DC5DBCF170A7E1D00741241 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7C3943EC17265DCB000BC703 /* FRBDiff */,
 				5DC5DBD0170A7E3400741241 /* FRBKeyedSet */,
 			);
 			path = Classes;
@@ -288,6 +335,7 @@
 		5DC632A21689D5BD000ED53C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CA4A485172544AA00C36E4D /* CoreText.framework */,
 				5D639848171AB0DA00CFECC1 /* UIKit.framework */,
 				5DC63368168A2A0B000ED53C /* CoreGraphics.framework */,
 				5DC632A31689D5BD000ED53C /* Foundation.framework */,
@@ -299,6 +347,7 @@
 		5DC632A51689D5BD000ED53C /* Frostbit */ = {
 			isa = PBXGroup;
 			children = (
+				7C94F87E1729278C00C7BA78 /* Frostbit.h */,
 				5DC5DBCE170A7DF500741241 /* DataStructures */,
 				5DC0C86E16E21637006ED854 /* Managed Objects */,
 				5DCC95E4168D9AF3004F8D4E /* UIKit */,
@@ -322,6 +371,8 @@
 		5DC632BA1689D5BD000ED53C /* FrostbitTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C3943F117265E21000BC703 /* FRBDiff */,
+				7C1CC21D17253E0C00B64327 /* FRBAttributedString */,
 				5DC5DBD5170B202C00741241 /* FRBKeyedSet */,
 				5DC0C87716E21685006ED854 /* Managed Objects */,
 				5DC63351168A150C000ED53C /* FRBTestGeometryPointFunctions.h */,
@@ -463,6 +514,7 @@
 		5DCC95E6168D9AF3004F8D4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7C1CC21917253D2B00B64327 /* FRBAttributedStringBuilder */,
 				5DCC9613168DA780004F8D4E /* FRBDatePickerPopover */,
 			);
 			path = Classes;
@@ -484,6 +536,69 @@
 				5DCC9615168DA780004F8D4E /* FRBDatePickerPopover.m */,
 			);
 			path = FRBDatePickerPopover;
+			sourceTree = "<group>";
+		};
+		7C1CC21917253D2B00B64327 /* FRBAttributedStringBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				7C1CC21A17253D3600B64327 /* FRBAttributedStringBuilder.h */,
+				7C1CC21B17253D3600B64327 /* FRBAttributedStringBuilder.m */,
+			);
+			path = FRBAttributedStringBuilder;
+			sourceTree = "<group>";
+		};
+		7C1CC21D17253E0C00B64327 /* FRBAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				7CA4A47A17253FC500C36E4D /* FRBAttributedStringTest.h */,
+				7CA4A47B17253FC500C36E4D /* FRBAttributedStringTest.m */,
+				7CA1D58C1760A243003CD396 /* FRBTestMultipleBuilders.h */,
+				7CA1D58D1760A244003CD396 /* FRBTestMultipleBuilders.m */,
+				7CA4A47617253FC500C36E4D /* FRBTestAttributedStringErrors.h */,
+				7CA4A47717253FC500C36E4D /* FRBTestAttributedStringErrors.m */,
+				7CA4A47817253FC500C36E4D /* FRBTestAttributedStringEscapes.h */,
+				7CA4A47917253FC500C36E4D /* FRBTestAttributedStringEscapes.m */,
+				7CA4A47C17253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.h */,
+				7CA4A47D17253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.m */,
+				7CA4A47E17253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.h */,
+				7CA4A47F17253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m */,
+			);
+			name = FRBAttributedString;
+			sourceTree = "<group>";
+		};
+		7C3943EC17265DCB000BC703 /* FRBDiff */ = {
+			isa = PBXGroup;
+			children = (
+				7C3943F517265FB3000BC703 /* private */,
+				7C3943F017265E1A000BC703 /* FRBDictionaryTraits.h */,
+				7C3943ED17265DDD000BC703 /* FRBDiff.h */,
+				7C3943EE17265DDD000BC703 /* FRBDiff.m */,
+			);
+			path = FRBDiff;
+			sourceTree = "<group>";
+		};
+		7C3943F117265E21000BC703 /* FRBDiff */ = {
+			isa = PBXGroup;
+			children = (
+				7C3943F217265E3B000BC703 /* FRBDiffTestTraitsCompliance.h */,
+				7C3943F317265E3B000BC703 /* FRBDiffTestTraitsCompliance.m */,
+				7C3943F91726641A000BC703 /* FRBDiffTestTrivial.h */,
+				7C3943FA1726641A000BC703 /* FRBDiffTestTrivial.m */,
+				7C94F8781729146B00C7BA78 /* FRBDiffTestDictionarySimple.h */,
+				7C94F8791729146B00C7BA78 /* FRBDiffTestDictionarySimple.m */,
+				7C94F87B17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.h */,
+				7C94F87C17291B4D00C7BA78 /* FRBDiffTestDictionaryNested.m */,
+			);
+			name = FRBDiff;
+			sourceTree = "<group>";
+		};
+		7C3943F517265FB3000BC703 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				7C3943F617265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.h */,
+				7C3943F717265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,6 +727,9 @@
 				5DCC9619168DA7A9004F8D4E /* UIViewController+FRBNavigationStack.m in Sources */,
 				5DC0C87316E21649006ED854 /* FRBManagedObject.m in Sources */,
 				5DC5DBD3170A7E4100741241 /* FRBKeyedSet.m in Sources */,
+				7C1CC21C17253D3600B64327 /* FRBAttributedStringBuilder.m in Sources */,
+				7C3943EF17265DDD000BC703 /* FRBDiff.m in Sources */,
+				7C3943F817265FC6000BC703 /* NSDictionary+FRBDictionaryTraitsCompliance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +742,16 @@
 				5DC0C87B16E25B58006ED854 /* FRBTestManagedObjectCustomGettersSetters.m in Sources */,
 				5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */,
 				5D63983B171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m in Sources */,
+				7CA4A48017253FC500C36E4D /* FRBTestAttributedStringErrors.m in Sources */,
+				7CA4A48117253FC500C36E4D /* FRBTestAttributedStringEscapes.m in Sources */,
+				7CA4A48217253FC500C36E4D /* FRBAttributedStringTest.m in Sources */,
+				7CA4A48317253FC500C36E4D /* FRBTestAttributedStringInlineStylesApplication.m in Sources */,
+				7CA4A48417253FC500C36E4D /* FRBTestAttributedStringRegisteredStylesApplication.m in Sources */,
+				7C3943F417265E3B000BC703 /* FRBDiffTestTraitsCompliance.m in Sources */,
+				7C3943FB1726641A000BC703 /* FRBDiffTestTrivial.m in Sources */,
+				7C94F87A1729146B00C7BA78 /* FRBDiffTestDictionarySimple.m in Sources */,
+				7C94F87D17291B4E00C7BA78 /* FRBDiffTestDictionaryNested.m in Sources */,
+				7CA1D58E1760A245003CD396 /* FRBTestMultipleBuilders.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
