@@ -4,4 +4,8 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+
+    #define FRB_COMMON_CRYPTO_FUNCTIONS_INCLUDED           1
+    #define FRB_COMMON_CRYPTO_NSDATA_CATEGORIES_INCLUDED   1
+    #define FRB_COMMON_CRYPTO_NSSTRING_CATEGORIES_INCLUDED 1
 #endif

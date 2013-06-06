@@ -19,6 +19,9 @@
     for FRBAttributedStringBuilder prior to execution
  */
 @interface FRBAttributedStringTest : SenTestCase
+{
+    FRBAttributedStringBuilder *_stringBuilder;
+}
 
 - (void) assertString: (NSAttributedString *) string 
              fontSize: (CGFloat) fontSize 

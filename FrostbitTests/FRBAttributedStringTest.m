@@ -121,7 +121,7 @@
     
     id attributed = nil;
     
-    STAssertThrows(attributed = [FRBAttributedStringBuilder stringWithString: string], @"");
+    STAssertThrows(attributed = [_stringBuilder stringWithString: string], @"");
 }
 
 
@@ -130,7 +130,15 @@
 
 - (void) setUp
 {
-    [FRBAttributedStringBuilder clearRegisteredStyles];
+    [super setUp];
+    _stringBuilder = [FRBAttributedStringBuilder new];
+}
+
+
+- (void) tearDown
+{
+    _stringBuilder = nil;
+    [super tearDown];
 }
 
 @end

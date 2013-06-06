@@ -20,7 +20,7 @@
 - (void) test_fontSize
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: size=16]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: size=16]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -32,7 +32,7 @@
 - (void) test_fontName
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: font=Zapfino]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: font=Zapfino]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -44,7 +44,7 @@
 - (void) test_fontColor
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: color=FF0000]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: color=FF0000]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -56,7 +56,7 @@
 - (void) test_underlineColor
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: underlineColor=FF0000]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: underlineColor=FF0000]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -68,7 +68,7 @@
 - (void) test_underlineStyle
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: underline=single]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: underline=single]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -77,7 +77,7 @@
     
     
     string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: underline=double]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: underline=double]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -86,7 +86,7 @@
 
     
     string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: underline=thick]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: underline=thick]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -95,7 +95,7 @@
 
     
     string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: underline=none]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: underline=none]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -107,7 +107,7 @@
 - (void) test_fontNameSize
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: font=Marker Felt Wide, size = 36]string[/a]"];
+    [_stringBuilder stringWithString: @"[a: font=Marker Felt Wide, size = 36]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -120,7 +120,7 @@
 - (void) test_reuse
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a: font=Zapfino]1[/a]2[a]3[/a]"];
+    [_stringBuilder stringWithString: @"[a: font=Zapfino]1[/a]2[a]3[/a]"];
     
     [self assertString: string fontName: @"Zapfino" atIndex: 0];   
     [self assertString: string fontName: @"Zapfino" atIndex: 2];   
@@ -130,7 +130,7 @@
 - (void) test_redefine
 {
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString:
+    [_stringBuilder stringWithString:
      @"[#: size=1]A[/#]B[#: size=2]C[/#]"];
     
     [self assertString: string fontSize: 2 atIndex: 0];   

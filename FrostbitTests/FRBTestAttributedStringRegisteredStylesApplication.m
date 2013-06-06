@@ -22,28 +22,28 @@
 
 - (void) test_notNil
 {
-    id string = [FRBAttributedStringBuilder stringWithString: @"string"];
+    id string = [_stringBuilder stringWithString: @"string"];
     STAssertNotNil(string, @"");
 }
 
 
 - (void) test_isKindOfClass
 {
-    id string = [FRBAttributedStringBuilder stringWithString: @"string"];
+    id string = [_stringBuilder stringWithString: @"string"];
     STAssertTrue([string isKindOfClass: [NSAttributedString class]], @"");
 }
 
 
 - (void) test_length_noStyle
 {
-    NSAttributedString *string = [FRBAttributedStringBuilder stringWithString: @"string"];
+    NSAttributedString *string = [_stringBuilder stringWithString: @"string"];
     STAssertEquals(string.length, 6u, @"");
 }
 
 
 - (void) test_length_style
 {
-    NSAttributedString *string = [FRBAttributedStringBuilder stringWithString: 
+    NSAttributedString *string = [_stringBuilder stringWithString: 
                                   @"[long style name]string[/long style name]"];
     STAssertEquals(string.length, 6u, @"");
 }
@@ -53,19 +53,19 @@
 {
     STAssertNoThrow({
         // A style named 'style'
-        [FRBAttributedStringBuilder stringWithString: @"[style]string[/style]"];
+        [_stringBuilder stringWithString: @"[style]string[/style]"];
         
         // A style named 'style/substyle'
-        [FRBAttributedStringBuilder stringWithString: @"[style/substyle]string[/style/substyle]"];
+        [_stringBuilder stringWithString: @"[style/substyle]string[/style/substyle]"];
         
         // A style named 'style#other'
-        [FRBAttributedStringBuilder stringWithString: @"[style#other]string[/style#other]"];
+        [_stringBuilder stringWithString: @"[style#other]string[/style#other]"];
         
         // A style named '1'
-        [FRBAttributedStringBuilder stringWithString: @"[1]string[/1]"];
+        [_stringBuilder stringWithString: @"[1]string[/1]"];
         
         // A style named '!#$%%^^&'
-        [FRBAttributedStringBuilder stringWithString: @"[!#$%%^^&]string[/!#$%%^^&]"];
+        [_stringBuilder stringWithString: @"[!#$%%^^&]string[/!#$%%^^&]"];
     }, @"");
 }
 
@@ -75,11 +75,11 @@
 
 - (void) test_fontSize
 {
-    [FRBAttributedStringBuilder setFontName: @"Helvetica" 
-                                       size: 36 
-                               forStyleName: @"a"];
+    [_stringBuilder setFontName: @"Helvetica" 
+                           size: 36
+                   forStyleName: @"a"];
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a]"];
+    [_stringBuilder stringWithString: @"[a]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -90,11 +90,11 @@
 
 - (void) test_fontName
 {
-    [FRBAttributedStringBuilder setFontName: @"Zapfino" 
-                                       size: 36 
-                               forStyleName: @"a"];
+    [_stringBuilder setFontName: @"Zapfino" 
+                           size: 36
+                   forStyleName: @"a"];
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a]"];
+    [_stringBuilder stringWithString: @"[a]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -105,11 +105,11 @@
 
 - (void) test_fontNameSize
 {
-    [FRBAttributedStringBuilder setFontName: @"Marker Felt Wide" 
-                                       size: 36 
-                               forStyleName: @"a"];
+    [_stringBuilder setFontName: @"Marker Felt Wide" 
+                           size: 36
+                   forStyleName: @"a"];
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a]"];
+    [_stringBuilder stringWithString: @"[a]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -121,11 +121,11 @@
 
 - (void) test_fontColor
 {
-    [FRBAttributedStringBuilder setFontColor: [UIColor redColor]
-                                forStyleName: @"a"];
+    [_stringBuilder setFontColor: [UIColor redColor]
+                    forStyleName: @"a"];
  
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a]"];
+    [_stringBuilder stringWithString: @"[a]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -136,11 +136,11 @@
 
 - (void) test_underlineColor
 {
-    [FRBAttributedStringBuilder setUnderlineColor: [UIColor redColor]
-                                     forStyleName: @"a"];
+    [_stringBuilder setUnderlineColor: [UIColor redColor]
+                         forStyleName: @"a"];
     
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a]"];
+    [_stringBuilder stringWithString: @"[a]string[/a]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -151,11 +151,11 @@
 
 - (void) test_underlineStyle
 {
-    [FRBAttributedStringBuilder setUnderlineStyle: kCTUnderlineStyleSingle
-                                     forStyleName: @"single"];
+    [_stringBuilder setUnderlineStyle: kCTUnderlineStyleSingle
+                         forStyleName: @"single"];
     
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[single]string[/single]"];
+    [_stringBuilder stringWithString: @"[single]string[/single]"];
     
     for (NSInteger i = 0; i < string.length; ++i)
     {
@@ -169,16 +169,16 @@
 
 - (void) test_twoStyles_noIntersect
 {
-    [FRBAttributedStringBuilder setFontName: @"Helvetica" 
-                                       size: 36 
-                               forStyleName: @"a"];
+    [_stringBuilder setFontName: @"Helvetica" 
+                           size: 36
+                   forStyleName: @"a"];
     
-    [FRBAttributedStringBuilder setFontName: @"Zapfino" 
-                               size: 12 
-                       forStyleName: @"b"];
+    [_stringBuilder setFontName: @"Zapfino" 
+                           size: 12
+                   forStyleName: @"b"];
     
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]string[/a] with multiple [b]styles[/b]"];
+    [_stringBuilder stringWithString: @"[a]string[/a] with multiple [b]styles[/b]"];
     
     for (NSInteger i = 0; i < 6; ++i)
     {
@@ -197,16 +197,16 @@
 
 - (void) test_twoStyles_contain
 {
-    [FRBAttributedStringBuilder setFontName: @"Helvetica" 
-                                       size: 36 
-                               forStyleName: @"a"];
+    [_stringBuilder setFontName: @"Helvetica" 
+                           size: 36
+                   forStyleName: @"a"];
     
-    [FRBAttributedStringBuilder setFontName: @"Zapfino" 
-                                       size: 12 
-                               forStyleName: @"b"];
+    [_stringBuilder setFontName: @"Zapfino" 
+                           size: 12
+                   forStyleName: @"b"];
     
     NSAttributedString *string = 
-    [FRBAttributedStringBuilder stringWithString: @"[a]1[b]2[/b]3[/a]"];
+    [_stringBuilder stringWithString: @"[a]1[b]2[/b]3[/a]"];
     
     [self assertString: string fontSize: 36           atIndex: 0];   
     [self assertString: string fontName: @"Helvetica" atIndex: 0];   

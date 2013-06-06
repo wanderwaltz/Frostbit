@@ -19,6 +19,12 @@
  */
 @interface FRBAttributedStringBuilder : NSObject
 
+/*! Returns the default instance. Note that this class is not a 
+    singleton and multiple FRBAttributedStringBuilder instances
+    are allowed.
+ */
++ (id) defaultBuilder;
+
 
 /*! This method is used to construct an attributed string instance
    with attributes specified either inline in the string parameter,
@@ -92,7 +98,7 @@
    Returns NSAttributedString instance, return type is set to id
    for comatibility with NSString's selector with the same name.
  */
-+ (id) stringWithString: (NSString *) string;
+- (id) stringWithString: (NSString *) string;
 
 
 #pragma mark styles
@@ -115,37 +121,37 @@
       @"[MyStyle]some Arial 16 red text[/MyStyle]"
  */
 
-+ (void) setFontName: (NSString *) fontName 
+- (void) setFontName: (NSString *) fontName
                 size: (CGFloat) size 
         forStyleName: (NSString *) style;
 
-+ (void) setFontColor: (UIColor  *) color
+- (void) setFontColor: (UIColor  *) color
          forStyleName: (NSString *) style;
 
-+ (void) setUnderlineColor: (UIColor  *) color
+- (void) setUnderlineColor: (UIColor  *) color
               forStyleName: (NSString *) style;
 
-+ (void) setUnderlineStyle: (CTUnderlineStyle) underlineStyle
+- (void) setUnderlineStyle: (CTUnderlineStyle) underlineStyle
               forStyleName: (NSString *) style;
 
 
 /*! This method copies all attributes specified in the dictionary
    to the style with specified name.
  */
-+ (void) setAttributes: (NSDictionary *) attributes
+- (void) setAttributes: (NSDictionary *) attributes
           forStyleName: (NSString *) style;
 
 
 /*! This method applies a style with the given name to the
    provided mutable attributed string instance.
  */
-+ (void) addStyleWithName: (NSString *) style 
+- (void) addStyleWithName: (NSString *) style
                     range: (NSRange) range
                  toString: (NSMutableAttributedString *) string;
 
 
 /*! Removes all registered styles
  */
-+ (void) clearRegisteredStyles; 
+- (void) clearRegisteredStyles;
 
 @end

@@ -29,11 +29,37 @@ static NSString * const kParsedStyleNameKey  = @"name";
 
 
 #pragma mark -
+#pragma mark FRBAttributedStringBuilder private
+
+@interface FRBAttributedStringBuilder()
+{
+@private
+    NSMutableDictionary *_allStyles;
+}
+
+@end
+
+
+#pragma mark -
 #pragma mark FRBAttributedStringBuilder implementation
 
 @implementation FRBAttributedStringBuilder
 
-+ (id) stringWithString: (NSString *) string
++ (id) defaultBuilder
+{
+    static dispatch_once_t predicate = 0;
+    __strong static id instance = nil;
+    
+    dispatch_once(&predicate,
+                  ^{
+                      instance = [self new];
+                  });
+    
+    return instance;
+}
+
+
+- (id) stringWithString: (NSString *) string
 {
     __block NSMutableAttributedString *attributed = nil;
     
@@ -59,13 +85,13 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark -
 #pragma mark styles
 
-+ (void) clearRegisteredStyles
+- (void) clearRegisteredStyles
 {
     [[self allStyles] removeAllObjects];
 }
 
 
-+ (void) setFontName: (NSString *) fontName 
+- (void) setFontName: (NSString *) fontName
                 size: (CGFloat) size 
         forStyleName: (NSString *) style
 {
@@ -82,7 +108,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) setFontColor: (UIColor  *) color
+- (void) setFontColor: (UIColor  *) color
          forStyleName: (NSString *) style
 {
     [self setColor: color 
@@ -91,7 +117,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) setUnderlineColor: (UIColor  *) color
+- (void) setUnderlineColor: (UIColor  *) color
               forStyleName: (NSString *) style
 {
     [self setColor: color 
@@ -100,7 +126,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) setUnderlineStyle: (CTUnderlineStyle) underlineStyle
+- (void) setUnderlineStyle: (CTUnderlineStyle) underlineStyle
               forStyleName: (NSString *) style
 {
     NSMutableDictionary *attributes = [self styleForName: style];
@@ -109,7 +135,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) setAttributes: (NSDictionary *) newAttributes
+- (void) setAttributes: (NSDictionary *) newAttributes
           forStyleName: (NSString *) style
 {
     if (newAttributes.count > 0)
@@ -120,7 +146,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) addStyleWithName: (NSString *) style 
+- (void) addStyleWithName: (NSString *) style
                     range: (NSRange) range
                  toString: (NSMutableAttributedString *) string
 {
@@ -134,7 +160,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark -
 #pragma mark private: registering styles
 
-+ (void) setColor: (UIColor *) color
+- (void) setColor: (UIColor *) color
      forAttribute: (CFStringRef) attribute
             style: (NSString *) style
 {
@@ -153,23 +179,21 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark -
 #pragma mark private: styles
 
-+ (NSMutableDictionary *) allStyles
+- (NSMutableDictionary *) allStyles
 {
-    static dispatch_once_t predicate  = 0;
-    __strong static id styles = nil;
+    if (_allStyles == nil)
+    {
+        _allStyles = [NSMutableDictionary dictionary];
+    }
     
-    dispatch_once(&predicate, 
-                  ^{
-                      styles = [NSMutableDictionary dictionary];
-                  });
-    return styles;
+    return _allStyles;
 }
 
 
 /* Creates the dictionary if style key is not present in styles,
    so return value is never nil.
  */
-+ (NSMutableDictionary *) styleForName: (id) style
+- (NSMutableDictionary *) styleForName: (id) style
 {
     if (style == nil) style = [NSNull null];
     
@@ -186,7 +210,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 }
 
 
-+ (void) addStyleWithName: (NSString *) style 
+- (void) addStyleWithName: (NSString *) style
                     range: (NSRange) range
                  toString: (NSMutableAttributedString *) string
              inlineStyles: (NSDictionary *) inlineStyles
@@ -196,7 +220,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
     
     if (attributes == nil)
     {
-        attributes = [[self class] styleForName: style];
+        attributes = [self styleForName: style];
     }
     
     NSAssert(attributes != nil, @"");
@@ -250,7 +274,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark private: parser
 
 // A simple hex string parser (RGB without alpha)
-+ (UIColor *) colorFromString: (NSString *) string
+- (UIColor *) colorFromString: (NSString *) string
 {
     NSScanner *scanner = [NSScanner scannerWithString: string];
     
@@ -273,7 +297,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
    exceptions, trying to recover from errors automatically, 
    ignoring malformed attributes.
  */
-+ (NSDictionary *) parseInlineStyle: (NSString *) style
+- (NSDictionary *) parseInlineStyle: (NSString *) style
 {
     /* These attributes are processed in a special way,
        other are just translated with translation mapping.
@@ -356,10 +380,10 @@ static NSString * const kParsedStyleNameKey  = @"name";
                    special interpretation of their values.
                  */
                 NSString *translatedName = 
-                [self attributeNameTranslation][attributeName];
+                [[self class] attributeNameTranslation][attributeName];
                 
                 id translatedValue = 
-                [self attributeValueTranslation][attributeValue];
+                [[self class] attributeValueTranslation][attributeValue];
                 
                 // Support undefined attributes by passing the exact name/value we've received
                 if (translatedName  == nil) translatedName  = attributeName;
@@ -411,7 +435,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
  
    Inline style definitions are parsed in the +parseInlineStyle: method
  */
-+ (void) parseString: (NSString *) string 
+- (void) parseString: (NSString *) string
      completionBlock: (FRBAttributedStringParserCompletion) block
 {
     static const NSInteger kState_Scan             = 0;
@@ -745,7 +769,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
 #pragma mark -
 #pragma mark private: error handling
 
-+ (void) throwParseException: (NSString *) reason
+- (void) throwParseException: (NSString *) reason
                   atPosition: (NSUInteger) index
 {
     NSString *exceptionReason = nil;
