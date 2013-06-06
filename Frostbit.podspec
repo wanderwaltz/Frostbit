@@ -126,6 +126,11 @@ Pod::Spec.new do |spec|
 
 				dpp.dependency 'Frostbit/UIKit/Categories/UIViewController'
 			end
+
+			uiclasses.subspec 'FRBAttributedStringBuilder' do |asb|
+				asb.source_files = 'Frostbit/UIKit/Classes/FRBAttributedStringBuilder/**/*.{h,m}'
+				asb.xcconfig     = { 'OTHER_CFLAGS' => '-FRB_UICLASSES_ATTRIBUTED_STRING_BUILDER_INCLUDED=1' }
+			end
 		end
 
 		# UI categories

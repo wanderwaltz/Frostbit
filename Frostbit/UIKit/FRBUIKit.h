@@ -22,4 +22,8 @@
     #import "FRBDatePickerPopover.h"
 #endif
 
+#if FRB_UICLASSES_ATTRIBUTED_STRING_BUILDER_INCLUDED
+    #import "FRBAttributedStringBuilder.h"
+#endif
+
 #endif
