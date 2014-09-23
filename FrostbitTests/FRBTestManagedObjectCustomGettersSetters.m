@@ -34,9 +34,9 @@
 {
     Class class = [FRBTestManagedObjectCustomGettersSettersHelper class];
     
-    STAssertTrue([class instancesRespondToSelector: @selector(customGetterPropertyValue)], @"");
-    STAssertTrue([class instancesRespondToSelector: @selector(customSetterProperty)],      @"");
-    STAssertTrue([class instancesRespondToSelector: @selector(customAccessorsGetValue)],   @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(customGetterPropertyValue)], @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(customSetterProperty)],      @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(customAccessorsGetValue)],   @"");
 }
 
 
@@ -44,9 +44,9 @@
 {
     Class class = [FRBTestManagedObjectCustomGettersSettersHelper class];
     
-    STAssertTrue([class instancesRespondToSelector: @selector(setCustomGetterProperty:)],      @"");
-    STAssertTrue([class instancesRespondToSelector: @selector(customSetterPropertySetValue:)], @"");
-    STAssertTrue([class instancesRespondToSelector: @selector(customAccessorsSetValue:)],      @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(setCustomGetterProperty:)],      @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(customSetterPropertySetValue:)], @"");
+    XCTAssertTrue([class instancesRespondToSelector: @selector(customAccessorsSetValue:)],      @"");
 }
 
 
@@ -59,9 +59,9 @@
     instance.customSetterProperty    = 456;
     instance.customAccessorsProperty = 789;
     
-    STAssertEquals(123, instance.customGetterProperty,    @"");
-    STAssertEquals(456, instance.customSetterProperty,    @"");
-    STAssertEquals(789, instance.customAccessorsProperty, @"");
+    XCTAssertEqual(123, instance.customGetterProperty,    @"");
+    XCTAssertEqual(456, instance.customSetterProperty,    @"");
+    XCTAssertEqual(789, instance.customAccessorsProperty, @"");
 }
 
 
@@ -74,9 +74,9 @@
     [instance customSetterPropertySetValue: 456];
     [instance customAccessorsSetValue: 789];
     
-    STAssertEquals(123, [instance customGetterPropertyValue], @"");
-    STAssertEquals(456, [instance customSetterProperty],      @"");
-    STAssertEquals(789, [instance customAccessorsGetValue],   @"");
+    XCTAssertEqual(123, [instance customGetterPropertyValue], @"");
+    XCTAssertEqual(456, [instance customSetterProperty],      @"");
+    XCTAssertEqual(789, [instance customAccessorsGetValue],   @"");
 }
 
 

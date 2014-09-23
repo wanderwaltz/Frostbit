@@ -27,16 +27,16 @@
     NSDictionary *attributes = [string attributesAtIndex: index 
                                           effectiveRange: NULL];
     
-    STAssertNotNil(attributes, @"");
+    XCTAssertNotNil(attributes, @"");
     
     CTFontRef font = (__bridge CTFontRef)[attributes objectForKey: 
                                           (__bridge id)kCTFontAttributeName];
     
-    STAssertTrue(font != NULL, @"");
+    XCTAssertTrue(font != NULL, @"");
     
     CGFloat size = CTFontGetSize(font);
     
-    STAssertEqualsWithAccuracy(size, fontSize, 0.5, @"");
+    XCTAssertEqualWithAccuracy(size, fontSize, 0.5, @"");
 }
 
 
@@ -47,16 +47,16 @@
     NSDictionary *attributes = [string attributesAtIndex: index 
                                           effectiveRange: NULL];
     
-    STAssertNotNil(attributes, @"");
+    XCTAssertNotNil(attributes, @"");
     
     CTFontRef font = (__bridge CTFontRef)[attributes objectForKey: 
                                           (__bridge id)kCTFontAttributeName];
     
-    STAssertTrue(font != NULL, @"");
+    XCTAssertTrue(font != NULL, @"");
     
     NSString *name = (__bridge_transfer NSString *)CTFontCopyName(font, kCTFontFullNameKey);
     
-    STAssertEqualObjects(name, fontName, @"");
+    XCTAssertEqualObjects(name, fontName, @"");
 }
 
 
@@ -67,16 +67,16 @@
     NSDictionary *attributes = [string attributesAtIndex: index 
                                           effectiveRange: NULL];
     
-    STAssertNotNil(attributes, @"");
+    XCTAssertNotNil(attributes, @"");
     
     CGColorRef color = (__bridge CGColorRef)[attributes objectForKey: 
                                           (__bridge id)kCTForegroundColorAttributeName];
     
-    STAssertTrue(color != NULL, @"");
+    XCTAssertTrue(color != NULL, @"");
     
     UIColor *uiColor = [UIColor colorWithCGColor: color];
     
-    STAssertEqualObjects(uiColor, fontColor, @"");
+    XCTAssertEqualObjects(uiColor, fontColor, @"");
 }
 
 
@@ -87,16 +87,16 @@
     NSDictionary *attributes = [string attributesAtIndex: index 
                                           effectiveRange: NULL];
     
-    STAssertNotNil(attributes, @"");
+    XCTAssertNotNil(attributes, @"");
     
     CGColorRef color = (__bridge CGColorRef)[attributes objectForKey: 
                                              (__bridge id)kCTUnderlineColorAttributeName];
     
-    STAssertTrue(color != NULL, @"");
+    XCTAssertTrue(color != NULL, @"");
     
     UIColor *uiColor = [UIColor colorWithCGColor: color];
     
-    STAssertEqualObjects(uiColor, underlineColor, @"");
+    XCTAssertEqualObjects(uiColor, underlineColor, @"");
 }
 
 
@@ -107,12 +107,12 @@
     NSDictionary *attributes = [string attributesAtIndex: index 
                                           effectiveRange: NULL];
     
-    STAssertNotNil(attributes, @"");
+    XCTAssertNotNil(attributes, @"");
     
     CTUnderlineStyle style = [[attributes objectForKey: 
                                (__bridge id)kCTUnderlineStyleAttributeName] intValue];
     
-    STAssertEquals(style, underlineStyle, @"");
+    XCTAssertEqual(style, underlineStyle, @"");
 }
 
 
@@ -121,7 +121,7 @@
     
     id attributed = nil;
     
-    STAssertThrows(attributed = [_stringBuilder stringWithString: string], @"");
+    XCTAssertThrows(attributed = [_stringBuilder stringWithString: string], @"");
 }
 
 

@@ -73,11 +73,11 @@
 
 // Asserts that the inequality Left <= X < Right is true
 #define FRB_AssertIntegerRange_LE_X_L(Left, X, Right)\
-    NSAssert(((Left) <= (X)) && ((X) < (Right)), @"Expected %d <= " @#X " < %d, got %d", Left, Right, X)
+    NSAssert(((Left) <= (X)) && ((X) < (Right)), @"Expected %ld <= " @#X " < %ld, got %ld", (long)(Left), (long)(Right), (long)(X))
 
 // Asserts that the inequality Left <= X <= Right is true
 #define FRB_AssertIntegerRange_LE_X_LE(Left, X, Right)\
-    NSAssert(((Left) <= (X)) && ((X) <= (Right)), @"Expected %d <= " @#X " <= %d, got %d", Left, Right, X)
+    NSAssert(((Left) <= (X)) && ((X) <= (Right)), @"Expected %ld <= " @#X " <= %ld, got %ld", (long)(Left), (long)(Right), (long)(X))
 
 // Asserts that a certain X is > 0
 #define FRB_AssertIntegerPositive(X)\
@@ -86,6 +86,6 @@
 
 // Asserts that X >= Y
 #define FRB_AssertIntegerGreaterOrEquals(X, Y) \
-    NSAssert(((X) >= (Y)), @"Expected " @#X @"(%d) >= " @#Y "(%d)", X, Y)
+    NSAssert(((X) >= (Y)), @"Expected " @#X @"(%ld) >= " @#Y "(%ld)", (long)(X), (long)(Y))
 
 #endif

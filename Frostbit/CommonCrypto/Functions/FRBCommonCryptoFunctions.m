@@ -33,7 +33,7 @@
 NSString *FRB_MD5(NSData *data)
 {
     uint8_t md5Buffer[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(data.bytes, data.length, md5Buffer);
+    CC_MD5(data.bytes, (CC_LONG)data.length, md5Buffer);
     
     NSMutableString *output = [NSMutableString stringWithCapacity: CC_MD5_DIGEST_LENGTH*2];
     
@@ -47,7 +47,7 @@ NSString *FRB_MD5(NSData *data)
 NSString *FRB_SHA1(NSData *data)
 {
     uint8_t sha1Buffer[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(data.bytes, data.length, sha1Buffer);
+    CC_SHA1(data.bytes, (CC_LONG)data.length, sha1Buffer);
     
     NSMutableString *output = [NSMutableString stringWithCapacity: CC_SHA1_DIGEST_LENGTH*2];
     

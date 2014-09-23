@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBKeyedSet.h"
 
 
 #pragma mark -
 #pragma mark FRBTestKeyedSet interface
 
-@interface FRBTestKeyedSet : SenTestCase
+@interface FRBTestKeyedSet : XCTestCase
 @end

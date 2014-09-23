@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBDictionaryTraits.h"
 
 #pragma mark -
 #pragma mark FRBDiffTestTraitsCompliance interface
 
-@interface FRBDiffTestTraitsCompliance : SenTestCase
+@interface FRBDiffTestTraitsCompliance : XCTestCase
 @end

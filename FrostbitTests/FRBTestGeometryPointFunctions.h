@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBGeometry.h"
 
 
 #pragma mark -
 #pragma mark FRBTestGeometryPointFunctions interface
 
-@interface FRBTestGeometryPointFunctions : SenTestCase
+@interface FRBTestGeometryPointFunctions : XCTestCase
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBManagedObject.h"
 
 
@@ -25,5 +25,5 @@
 #pragma mark -
 #pragma mark FRBTestManagedObjectCustomGettersSetters interface
 
-@interface FRBTestManagedObjectCustomGettersSetters : SenTestCase
+@interface FRBTestManagedObjectCustomGettersSetters : XCTestCase
 @end

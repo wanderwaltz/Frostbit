@@ -351,7 +351,8 @@ static const void * const kKeyPropertyTypeForSelector = &kKeyPropertyTypeForSele
           
           @"B" : @(FRBManagedObjectPropertyTypeBool),
           
-          @"{_NSRange=II}" : @(FRBManagedObjectPropertyTypeNSRange)
+          @"{_NSRange=II}" : @(FRBManagedObjectPropertyTypeNSRange),
+          @"{_NSRange=QQ}" : @(FRBManagedObjectPropertyTypeNSRange)
         };
     }
     

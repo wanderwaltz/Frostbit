@@ -23,21 +23,21 @@
 - (void) test_notNil
 {
     id string = [_stringBuilder stringWithString: @"string"];
-    STAssertNotNil(string, @"");
+    XCTAssertNotNil(string, @"");
 }
 
 
 - (void) test_isKindOfClass
 {
     id string = [_stringBuilder stringWithString: @"string"];
-    STAssertTrue([string isKindOfClass: [NSAttributedString class]], @"");
+    XCTAssertTrue([string isKindOfClass: [NSAttributedString class]], @"");
 }
 
 
 - (void) test_length_noStyle
 {
     NSAttributedString *string = [_stringBuilder stringWithString: @"string"];
-    STAssertEquals(string.length, 6u, @"");
+    XCTAssertEqual(string.length, 6u, @"");
 }
 
 
@@ -45,13 +45,13 @@
 {
     NSAttributedString *string = [_stringBuilder stringWithString: 
                                   @"[long style name]string[/long style name]"];
-    STAssertEquals(string.length, 6u, @"");
+    XCTAssertEqual(string.length, 6u, @"");
 }
 
 
 - (void) test_styleNames
 {
-    STAssertNoThrow({
+    XCTAssertNoThrow({
         // A style named 'style'
         [_stringBuilder stringWithString: @"[style]string[/style]"];
         

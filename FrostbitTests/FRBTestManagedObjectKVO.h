@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBManagedObject.h"
 
 #pragma mark -
@@ -24,7 +24,7 @@
 #pragma mark -
 #pragma mark FRBTestManagedObjectKVO interface
 
-@interface FRBTestManagedObjectKVO : SenTestCase
+@interface FRBTestManagedObjectKVO : XCTestCase
 {
     FRBTestManagedObjectKVOHelper *_managedObject;
 }

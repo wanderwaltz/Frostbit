@@ -25,7 +25,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertFalse(diff.hasDifferences,
+    XCTAssertFalse(diff.hasDifferences,
                   @"-hasDifferences should return NO for different dictionaries "
                   @"with the same key/value pairs");
 }
@@ -38,7 +38,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue(diff.hasDifferences,
+    XCTAssertTrue(diff.hasDifferences,
                   @"-hasDifferences should return YES if adding a new key/value pair");
 }
 
@@ -50,7 +50,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue(diff.hasDifferences,
+    XCTAssertTrue(diff.hasDifferences,
                  @"-hasDifferences should return YES if removing a key/value pair");
 }
 
@@ -62,7 +62,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue(diff.hasDifferences,
+    XCTAssertTrue(diff.hasDifferences,
                  @"-hasDifferences should return YES if changing a value for key");
 }
 
@@ -74,7 +74,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.removedKeyPaths containsObject: @"key"],
+    XCTAssertTrue([diff.removedKeyPaths containsObject: @"key"],
                  @"removedKeyPaths should contain all keys which were removed "
                  @"from the new revision");
 }
@@ -87,7 +87,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.addedKeyPaths containsObject: @"key"],
+    XCTAssertTrue([diff.addedKeyPaths containsObject: @"key"],
                  @"addedKeyPaths should contain all keys which were added "
                  @"to the new revision");
 }
@@ -100,7 +100,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeyPaths containsObject: @"key"],
+    XCTAssertTrue([diff.updatedKeyPaths containsObject: @"key"],
                  @"updatedKeyPaths should contain all keys whose values were updated "
                  @"in the new revision");
 }

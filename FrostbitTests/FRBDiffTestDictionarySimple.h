@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBDiff.h"
 
 
 #pragma mark -
 #pragma mark FRBDiffTestDictionarySimple interface
 
-@interface FRBDiffTestDictionarySimple : SenTestCase
+@interface FRBDiffTestDictionarySimple : XCTestCase
 @end

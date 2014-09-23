@@ -21,8 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		44F8E80C19D17B36000459D1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F8E80B19D17B36000459D1 /* XCTest.framework */; };
 		5D63983B171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D63983A171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m */; };
-		5D639846171AAF5F00CFECC1 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D63983D171AAF5F00CFECC1 /* libOCMock.a */; };
 		5D639847171AAF5F00CFECC1 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5D63983E171AAF5F00CFECC1 /* License.txt */; };
 		5D639849171AB0DA00CFECC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D639848171AB0DA00CFECC1 /* UIKit.framework */; };
 		5D63984B171AB1AB00CFECC1 /* libFrostbit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A01689D5BD000ED53C /* libFrostbit.a */; };
@@ -33,7 +33,6 @@
 		5DC5DBD3170A7E4100741241 /* FRBKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD2170A7E4100741241 /* FRBKeyedSet.m */; };
 		5DC5DBD9170B206500741241 /* FRBTestKeyedSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5DBD8170B206500741241 /* FRBTestKeyedSet.m */; };
 		5DC632A41689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
-		5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632B21689D5BD000ED53C /* SenTestingKit.framework */; };
 		5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC632A31689D5BD000ED53C /* Foundation.framework */; };
 		5DC632BF1689D5BD000ED53C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DC632BD1689D5BD000ED53C /* InfoPlist.strings */; };
 		5DC632CF1689D6BC000ED53C /* FRBPointFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC632CE1689D6BC000ED53C /* FRBPointFunctions.m */; };
@@ -87,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44F8E80B19D17B36000459D1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5D639839171AAE7600CFECC1 /* FRBTestManagedObjectKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBTestManagedObjectKVO.h; sourceTree = "<group>"; };
 		5D63983A171AAE7600CFECC1 /* FRBTestManagedObjectKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRBTestManagedObjectKVO.m; sourceTree = "<group>"; };
 		5D63983D171AAF5F00CFECC1 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
@@ -115,8 +115,7 @@
 		5DC632A01689D5BD000ED53C /* libFrostbit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrostbit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632A31689D5BD000ED53C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DC632A71689D5BD000ED53C /* Frostbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Frostbit-Prefix.pch"; sourceTree = "<group>"; };
-		5DC632B11689D5BD000ED53C /* FrostbitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrostbitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DC632B21689D5BD000ED53C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5DC632B11689D5BD000ED53C /* FrostbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrostbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC632BC1689D5BD000ED53C /* FrostbitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrostbitTests-Info.plist"; sourceTree = "<group>"; };
 		5DC632BE1689D5BD000ED53C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DC632CD1689D6BC000ED53C /* FRBPointFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRBPointFunctions.h; sourceTree = "<group>"; };
@@ -194,12 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA4A487172544B800C36E4D /* CoreGraphics.framework in Frameworks */,
+				44F8E80C19D17B36000459D1 /* XCTest.framework in Frameworks */,
 				7CA4A486172544AA00C36E4D /* CoreText.framework in Frameworks */,
 				5D63984B171AB1AB00CFECC1 /* libFrostbit.a in Frameworks */,
 				5D639849171AB0DA00CFECC1 /* UIKit.framework in Frameworks */,
-				5DC632B31689D5BD000ED53C /* SenTestingKit.framework in Frameworks */,
 				5DC632B61689D5BD000ED53C /* Foundation.framework in Frameworks */,
-				5D639846171AAF5F00CFECC1 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC632A01689D5BD000ED53C /* libFrostbit.a */,
-				5DC632B11689D5BD000ED53C /* FrostbitTests.octest */,
+				5DC632B11689D5BD000ED53C /* FrostbitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,11 +333,11 @@
 		5DC632A21689D5BD000ED53C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44F8E80B19D17B36000459D1 /* XCTest.framework */,
 				7CA4A485172544AA00C36E4D /* CoreText.framework */,
 				5D639848171AB0DA00CFECC1 /* UIKit.framework */,
 				5DC63368168A2A0B000ED53C /* CoreGraphics.framework */,
 				5DC632A31689D5BD000ED53C /* Foundation.framework */,
-				5DC632B21689D5BD000ED53C /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -637,8 +635,8 @@
 			);
 			name = FrostbitTests;
 			productName = FrostbitTests;
-			productReference = 5DC632B11689D5BD000ED53C /* FrostbitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 5DC632B11689D5BD000ED53C /* FrostbitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -647,6 +645,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FRB;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Egor Chiglintsev";
 			};
@@ -856,23 +855,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frostbit/Frostbit-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/FrostbitTests/OCMock";
 				INFOPLIST_FILE = "FrostbitTests/FrostbitTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FrostbitTests/OCMock\"",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -880,23 +875,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frostbit/Frostbit-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/FrostbitTests/OCMock";
 				INFOPLIST_FILE = "FrostbitTests/FrostbitTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FrostbitTests/OCMock\"",
-				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

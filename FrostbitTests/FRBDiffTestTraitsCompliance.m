@@ -20,14 +20,14 @@
 
 - (void) testDictionaryCompliance
 {
-    STAssertTrue([NSDictionary conformsToProtocol: @protocol(FRBDictionaryTraits)],
+    XCTAssertTrue([NSDictionary conformsToProtocol: @protocol(FRBDictionaryTraits)],
                  @"NSDictionary class should conform to FRBDictionaryTraits");
 }
 
 
 - (void) testMutableDictionaryCompliance
 {
-    STAssertTrue([NSMutableDictionary conformsToProtocol: @protocol(FRBDictionaryTraits)],
+    XCTAssertTrue([NSMutableDictionary conformsToProtocol: @protocol(FRBDictionaryTraits)],
                  @"NSMutableDictionary class should conform to FRBDictionaryTraits");
 }
 

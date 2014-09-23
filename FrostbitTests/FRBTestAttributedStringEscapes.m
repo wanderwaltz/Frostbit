@@ -23,35 +23,35 @@
 - (void) test_escapedBrackets
 {
     NSAttributedString *attributed = [_stringBuilder stringWithString: @"\\[\\]"];
-    STAssertEqualObjects(attributed.string, @"[]", @"");
+    XCTAssertEqualObjects(attributed.string, @"[]", @"");
 }
 
 
 - (void) test_slash
 {
     NSAttributedString *attributed = [_stringBuilder stringWithString: @"\\"];
-    STAssertEqualObjects(attributed.string, @"\\", @"");
+    XCTAssertEqualObjects(attributed.string, @"\\", @"");
 }
 
 
 - (void) test_multiSlash
 {
     NSAttributedString *attributed = [_stringBuilder stringWithString: @"\\\\\\"];
-    STAssertEqualObjects(attributed.string, @"\\\\\\", @"");
+    XCTAssertEqualObjects(attributed.string, @"\\\\\\", @"");
 }
 
 
 - (void) test_defaultEscapes
 {
     NSAttributedString *attributed = [_stringBuilder stringWithString: @"\\n\\p\\t"];
-    STAssertEqualObjects(attributed.string, @"\\n\\p\\t", @"");
+    XCTAssertEqualObjects(attributed.string, @"\\n\\p\\t", @"");
 }
 
 
 - (void) test_slashesAndBrackets
 {
     NSAttributedString *attributed = [_stringBuilder stringWithString: @"\\\\\\[\\]\\\\"];
-    STAssertEqualObjects(attributed.string, @"\\\\[]\\\\", @"");
+    XCTAssertEqualObjects(attributed.string, @"\\\\[]\\\\", @"");
 }
 
 

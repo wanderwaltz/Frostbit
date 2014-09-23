@@ -18,7 +18,7 @@
 {
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: @{} newRevision: @{}];
     
-    STAssertFalse(diff.hasDifferences,
+    XCTAssertFalse(diff.hasDifferences,
                   @"hasDifferences should return NO for two empty dictionaries");
 }
 
@@ -30,7 +30,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: dictionary
                                              newRevision: dictionary];
-    STAssertFalse(diff.hasDifferences,
+    XCTAssertFalse(diff.hasDifferences,
                   @"hasDifferences should return NO for two identical pointers "
                   @"regardless of their content");
 }

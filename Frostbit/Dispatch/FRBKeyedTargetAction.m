@@ -104,7 +104,15 @@
         FRB_AssertClass(selectorString, NSString);
         SEL selector = NSSelectorFromString(selectorString);
         FRB_AssertResponds(_target, selector);
-        objc_msgSend(_target, selector, sender);
+        
+        if ([selectorString hasSuffix: @":"]) {
+            void (*method)(id, SEL, id) = (void(*)(id, SEL, id))objc_msgSend;
+            method(_target, selector, sender);
+        }
+        else {
+            void (*method)(id, SEL) = (void(*)(id, SEL))objc_msgSend;
+            method(_target, selector);
+        }
     }
     else if (!_inhibitConsoleWarnings)
     {

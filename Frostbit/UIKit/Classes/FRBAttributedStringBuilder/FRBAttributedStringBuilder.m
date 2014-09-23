@@ -776,7 +776,7 @@ static NSString * const kParsedStyleNameKey  = @"name";
     
     if (index != NSNotFound)
         exceptionReason = [NSString stringWithFormat: 
-                           @"Error parsing string at pos [%u]: %@", index, reason];
+                           @"Error parsing string at pos [%ld]: %@", (long)index, reason];
     else
         exceptionReason = [NSString stringWithFormat: 
                            @"Error parsing string: %@", reason];

@@ -22,15 +22,15 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertEquals(set.count, 0u, @"");
-    STAssertEquals([set countForKey: @"some key"], 0u, @"");
+    XCTAssertEqual(set.count, 0u, @"");
+    XCTAssertEqual([set countForKey: @"some key"], 0u, @"");
     
-    STAssertEquals(set.arrayOfAllObjects.count, 0u, @"");
-    STAssertEquals(set.setOfAllObjects.count, 0u,   @"");
+    XCTAssertEqual(set.arrayOfAllObjects.count, 0u, @"");
+    XCTAssertEqual(set.setOfAllObjects.count, 0u,   @"");
     
-    STAssertNil([set arrayOfObjectsForKey: @"other key"], @"");
-    STAssertNil([set setOfObjectsForKey: @"another key"], @"");
-    STAssertNil([set anyObjectForKey:         @"object"], @"");
+    XCTAssertNil([set arrayOfObjectsForKey: @"other key"], @"");
+    XCTAssertNil([set setOfObjectsForKey: @"another key"], @"");
+    XCTAssertNil([set anyObjectForKey:         @"object"], @"");
 }
 
 
@@ -39,29 +39,29 @@
     FRBKeyedSet *set = [FRBKeyedSet new];
     
     [set addObject: @1 forKey: @"key"];
-    STAssertEquals(set.count, 1u, @"");
+    XCTAssertEqual(set.count, 1u, @"");
     
     [set addObject: @2 forKey: @"key"];
-    STAssertEquals(set.count, 2u, @"");
+    XCTAssertEqual(set.count, 2u, @"");
     
     [set addObject: @3 forKey: @"other key"];
-    STAssertEquals(set.count, 3u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
     
     NSArray *array = set.arrayOfAllObjects;
-    STAssertNotNil(array, @"");
-    STAssertEquals(array.count, 3u, @"");
+    XCTAssertNotNil(array, @"");
+    XCTAssertEqual(array.count, 3u, @"");
     
-    STAssertTrueNoThrow([array containsObject: @1], @"");
-    STAssertTrueNoThrow([array containsObject: @2], @"");
-    STAssertTrueNoThrow([array containsObject: @3], @"");
+    XCTAssertTrue([array containsObject: @1], @"");
+    XCTAssertTrue([array containsObject: @2], @"");
+    XCTAssertTrue([array containsObject: @3], @"");
     
     NSSet *all = set.setOfAllObjects;
-    STAssertNotNil(all, @"");
-    STAssertEquals(all.count, 3u, @"");
+    XCTAssertNotNil(all, @"");
+    XCTAssertEqual(all.count, 3u, @"");
     
-    STAssertTrueNoThrow([all containsObject: @1], @"");
-    STAssertTrueNoThrow([all containsObject: @2], @"");
-    STAssertTrueNoThrow([all containsObject: @3], @"");
+    XCTAssertTrue([all containsObject: @1], @"");
+    XCTAssertTrue([all containsObject: @2], @"");
+    XCTAssertTrue([all containsObject: @3], @"");
 }
 
 
@@ -73,10 +73,10 @@
     [set addObject: @2 forKey: @"key"];
     [set addObject: @3 forKey: @"other key"];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey: @"key"], 2u, @"");
-    STAssertEquals([set countForKey: @"other key"], 1u, @"");
-    STAssertEquals([set countForKey: @"unexistent key"], 0u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey: @"key"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"other key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"unexistent key"], 0u, @"");
 }
 
 
@@ -97,41 +97,41 @@
     [set addObject: @5 forKey: otherKey];
     
     NSArray *arrayForKey = [set arrayOfObjectsForKey: key];
-    STAssertTrueNoThrow([arrayForKey containsObject: @1], @"");
-    STAssertTrueNoThrow([arrayForKey containsObject: @2], @"");
-    STAssertTrueNoThrow(![arrayForKey containsObject: @3], @"");
-    STAssertTrueNoThrow(![arrayForKey containsObject: @4], @"");
-    STAssertTrueNoThrow(![arrayForKey containsObject: @5], @"");
+    XCTAssertTrue([arrayForKey containsObject: @1], @"");
+    XCTAssertTrue([arrayForKey containsObject: @2], @"");
+    XCTAssertTrue(![arrayForKey containsObject: @3], @"");
+    XCTAssertTrue(![arrayForKey containsObject: @4], @"");
+    XCTAssertTrue(![arrayForKey containsObject: @5], @"");
     
-    STAssertEquals(arrayForKey.count, 2u, @"");
+    XCTAssertEqual(arrayForKey.count, 2u, @"");
     
     NSSet *setForKey = [set setOfObjectsForKey: key];
-    STAssertTrueNoThrow([setForKey containsObject: @1], @"");
-    STAssertTrueNoThrow([setForKey containsObject: @2], @"");
-    STAssertTrueNoThrow(![setForKey containsObject: @3], @"");
-    STAssertTrueNoThrow(![setForKey containsObject: @4], @"");
-    STAssertTrueNoThrow(![setForKey containsObject: @5], @"");
+    XCTAssertTrue([setForKey containsObject: @1], @"");
+    XCTAssertTrue([setForKey containsObject: @2], @"");
+    XCTAssertTrue(![setForKey containsObject: @3], @"");
+    XCTAssertTrue(![setForKey containsObject: @4], @"");
+    XCTAssertTrue(![setForKey containsObject: @5], @"");
     
-    STAssertEquals(setForKey.count, 2u, @"");
+    XCTAssertEqual(setForKey.count, 2u, @"");
     
     
     NSArray *arrayForOtherKey = [set arrayOfObjectsForKey: otherKey];
-    STAssertTrueNoThrow(![arrayForOtherKey containsObject: @1], @"");
-    STAssertTrueNoThrow(![arrayForOtherKey containsObject: @2], @"");
-    STAssertTrueNoThrow([arrayForOtherKey containsObject: @3], @"");
-    STAssertTrueNoThrow([arrayForOtherKey containsObject: @4], @"");
-    STAssertTrueNoThrow([arrayForOtherKey containsObject: @5], @"");
+    XCTAssertTrue(![arrayForOtherKey containsObject: @1], @"");
+    XCTAssertTrue(![arrayForOtherKey containsObject: @2], @"");
+    XCTAssertTrue([arrayForOtherKey containsObject: @3], @"");
+    XCTAssertTrue([arrayForOtherKey containsObject: @4], @"");
+    XCTAssertTrue([arrayForOtherKey containsObject: @5], @"");
     
-    STAssertEquals(arrayForOtherKey.count, 3u, @"");
+    XCTAssertEqual(arrayForOtherKey.count, 3u, @"");
     
     NSSet *setForOtherKey = [set setOfObjectsForKey: otherKey];
-    STAssertTrueNoThrow(![setForOtherKey containsObject: @1], @"");
-    STAssertTrueNoThrow(![setForOtherKey containsObject: @2], @"");
-    STAssertTrueNoThrow([setForOtherKey containsObject: @3], @"");
-    STAssertTrueNoThrow([setForOtherKey containsObject: @4], @"");
-    STAssertTrueNoThrow([setForOtherKey containsObject: @5], @"");
+    XCTAssertTrue(![setForOtherKey containsObject: @1], @"");
+    XCTAssertTrue(![setForOtherKey containsObject: @2], @"");
+    XCTAssertTrue([setForOtherKey containsObject: @3], @"");
+    XCTAssertTrue([setForOtherKey containsObject: @4], @"");
+    XCTAssertTrue([setForOtherKey containsObject: @5], @"");
     
-    STAssertEquals(setForOtherKey.count, 3u, @"");
+    XCTAssertEqual(setForOtherKey.count, 3u, @"");
 }
 
 
@@ -140,8 +140,8 @@
     FRBKeyedSet *set = [FRBKeyedSet new];
     
     [set addObject: @1 forKey: @2];
-    STAssertEquals(set.count, 1u, @"");
-    STAssertEqualObjects([set arrayOfObjectsForKey: @2][0], @1, @"");
+    XCTAssertEqual(set.count, 1u, @"");
+    XCTAssertEqualObjects([set arrayOfObjectsForKey: @2][0], @1, @"");
 }
 
 
@@ -154,7 +154,7 @@
     [set addObject: @1 forKey: key];
     [set addObject: @2 forKey: key];
  
-    STAssertTrueNoThrow([[set anyObjectForKey: key] isEqual: @1] ||
+    XCTAssertTrue([[set anyObjectForKey: key] isEqual: @1] ||
                         [[set anyObjectForKey: key] isEqual: @2], @"");
 }
 
@@ -168,9 +168,9 @@
     [set addObject: @3 forKey: @"other"];
     
     [set removeAllObjects];
-    STAssertEquals(set.count, 0u, @"");
-    STAssertEquals([set countForKey:   @"key"], 0u, @"");
-    STAssertEquals([set countForKey: @"other"], 0u, @"");
+    XCTAssertEqual(set.count, 0u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 0u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 0u, @"");
 }
 
 
@@ -184,12 +184,12 @@
     
     [set removeObject: @1];
     
-    STAssertEquals(set.count, 2u, @"");
-    STAssertEquals([set countForKey:   @"key"], 1u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 2u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
-    STAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
 }
 
 
@@ -204,12 +204,12 @@
     
     [set removeObject: @1];
     
-    STAssertEquals(set.count, 2u, @"");
-    STAssertEquals([set countForKey:   @"key"], 1u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 2u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
-    STAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
 }
 
 
@@ -223,12 +223,12 @@
     
     [set removeObject: @1 forKey: @"key"];
     
-    STAssertEquals(set.count, 2u, @"");
-    STAssertEquals([set countForKey:   @"key"], 1u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 2u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
-    STAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
 }
 
 
@@ -243,12 +243,12 @@
     
     [set removeObject: @1 forKey: @"key"];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:   @"key"], 1u, @"");
-    STAssertEquals([set countForKey: @"other"], 2u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 2u, @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
-    STAssertTrue( [[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
+    XCTAssertTrue( [[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
 }
 
 
@@ -262,15 +262,15 @@
     
     [set removeAllObjectsForKey: @"key"];
     
-    STAssertEquals(set.count, 1u, @"");
-    STAssertEquals([set countForKey:   @"key"], 0u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 1u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 0u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
-    STAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @1], @"");
+    XCTAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @1], @"");
     
-    STAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @2], @"");
-    STAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @2], @"");
+    XCTAssertFalse([[set setOfObjectsForKey:   @"key"] containsObject: @2], @"");
+    XCTAssertFalse([[set setOfObjectsForKey: @"other"] containsObject: @2], @"");
 }
 
 
@@ -284,9 +284,9 @@
     
     [set removeObjectsFromArray: @[@1, @2, @3]];
     
-    STAssertEquals(set.count, 0u, @"");
-    STAssertEquals([set countForKey:   @"key"], 0u, @"");
-    STAssertEquals([set countForKey: @"other"], 0u, @"");    
+    XCTAssertEqual(set.count, 0u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 0u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 0u, @"");    
 }
 
 
@@ -300,9 +300,9 @@
     
     [set removeObjectsFromSet: [NSSet setWithArray: @[@1, @2, @3]]];
     
-    STAssertEquals(set.count, 0u, @"");
-    STAssertEquals([set countForKey:   @"key"], 0u, @"");
-    STAssertEquals([set countForKey: @"other"], 0u, @"");
+    XCTAssertEqual(set.count, 0u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 0u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 0u, @"");
 }
 
 
@@ -314,11 +314,11 @@
     [set addObject: @2 forKey: @"key"];
     [set addObject: @3 forKey: @"other"];
     
-    STAssertTrue([set containsObject: @1], @"");
-    STAssertTrue([set containsObject: @2], @"");
-    STAssertTrue([set containsObject: @3], @"");
+    XCTAssertTrue([set containsObject: @1], @"");
+    XCTAssertTrue([set containsObject: @2], @"");
+    XCTAssertTrue([set containsObject: @3], @"");
     
-    STAssertFalse([set containsObject: @4], @"");
+    XCTAssertFalse([set containsObject: @4], @"");
 }
 
 
@@ -330,13 +330,13 @@
     [set addObject: @2 forKey: @"key"];
     [set addObject: @3 forKey: @"other"];
     
-    STAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey: @"other"], @"");
     
-    STAssertFalse([set containsObject: @1 forKey: @"other"], @"");
-    STAssertFalse([set containsObject: @2 forKey: @"other"], @"");
-    STAssertFalse([set containsObject: @3 forKey:   @"key"], @"");
+    XCTAssertFalse([set containsObject: @1 forKey: @"other"], @"");
+    XCTAssertFalse([set containsObject: @2 forKey: @"other"], @"");
+    XCTAssertFalse([set containsObject: @3 forKey:   @"key"], @"");
 }
 
 
@@ -348,13 +348,13 @@
     [set addObjectsFromArray: @[@1, @2] forKey: @"key"];
     [set addObjectsFromArray: @[@3]     forKey: @"other"];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:   @"key"], 2u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
 
-    STAssertTrue([set containsObject: @1], @"");
-    STAssertTrue([set containsObject: @2], @"");
-    STAssertTrue([set containsObject: @3], @"");
+    XCTAssertTrue([set containsObject: @1], @"");
+    XCTAssertTrue([set containsObject: @2], @"");
+    XCTAssertTrue([set containsObject: @3], @"");
 }
 
 
@@ -365,13 +365,13 @@
     [set addObjectsFromSet: [NSSet setWithArray: @[@1, @2]] forKey: @"key"];
     [set addObjectsFromSet: [NSSet setWithArray: @[@3]]     forKey: @"other"];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:   @"key"], 2u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1], @"");
-    STAssertTrue([set containsObject: @2], @"");
-    STAssertTrue([set containsObject: @3], @"");
+    XCTAssertTrue([set containsObject: @1], @"");
+    XCTAssertTrue([set containsObject: @2], @"");
+    XCTAssertTrue([set containsObject: @3], @"");
 }
 
 
@@ -385,12 +385,12 @@
      }];
     
     
-    STAssertEquals(set.count, 2u, @"");
-    STAssertEquals([set countForKey:   @"key"], 1u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 2u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1], @"");
-    STAssertTrue([set containsObject: @2], @"");
+    XCTAssertTrue([set containsObject: @1], @"");
+    XCTAssertTrue([set containsObject: @2], @"");
 }
 
 
@@ -407,11 +407,11 @@
     [set enumerateObjectsUsingBlock:
      ^(id object, FRBKeyedSetKey key, BOOL *stop){
          
-         STAssertTrue(allObjects.count > 0, @"");
+         XCTAssertTrue(allObjects.count > 0, @"");
          [allObjects removeObject: object];
      }];
     
-    STAssertEquals(allObjects.count, 0u, @"");
+    XCTAssertEqual(allObjects.count, 0u, @"");
 }
 
 
@@ -428,7 +428,7 @@
     [set enumerateObjectsUsingBlock:
      ^(id object, FRBKeyedSetKey key, BOOL *stop){
          
-         STAssertFalse(stopped, @"");
+         XCTAssertFalse(stopped, @"");
          stopped = YES;
          *stop   = YES;
      }];
@@ -451,8 +451,8 @@
          [allObjects removeObject: object];
      }];
     
-    STAssertEquals(allObjects.count, 1u, @"");
-    STAssertTrue([allObjects containsObject: @3], @"");
+    XCTAssertEqual(allObjects.count, 1u, @"");
+    XCTAssertTrue([allObjects containsObject: @3], @"");
 }
 
 
@@ -470,7 +470,7 @@
                      usingBlock:
      ^(id object, FRBKeyedSetKey key, BOOL *stop){
          
-         STAssertFalse(stopped, @"");
+         XCTAssertFalse(stopped, @"");
          stopped = YES;
          *stop   = YES;
      }];
@@ -486,16 +486,16 @@
     [set addObject: @3 forKey: @"other"];
     
     FRBKeyedSet *clone = [[FRBKeyedSet alloc] initWithKeyedSet: set];
-    STAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
+    XCTAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
                  @"Got '%@' instead", NSStringFromClass([clone class]));
     
-    STAssertEquals(clone.count, 3u, @"");
-    STAssertEquals([clone countForKey:   @"key"], 2u, @"");
-    STAssertEquals([clone countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(clone.count, 3u, @"");
+    XCTAssertEqual([clone countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([clone countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -504,14 +504,14 @@
     FRBKeyedSet *set = [[FRBKeyedSet alloc] initWithDictionary:
                         @{ @"key1" : @1, @"key2" : @2, @"key3" : @3 }];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey: @"key1"], 1u, @"");
-    STAssertEquals([set countForKey: @"key2"], 1u, @"");
-    STAssertEquals([set countForKey: @"key3"], 1u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey: @"key1"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"key2"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"key3"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1 forKey: @"key1"], @"");
-    STAssertTrue([set containsObject: @2 forKey: @"key2"], @"");
-    STAssertTrue([set containsObject: @3 forKey: @"key3"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey: @"key1"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey: @"key2"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey: @"key3"], @"");
 }
 
 
@@ -524,16 +524,16 @@
     [set addObject: @3 forKey: @"other"];
     
     FRBKeyedSet *clone = [set copy];
-    STAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
+    XCTAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
                  @"Got '%@' instead", NSStringFromClass([clone class]));
     
-    STAssertEquals(clone.count, 3u, @"");
-    STAssertEquals([clone countForKey:   @"key"], 2u, @"");
-    STAssertEquals([clone countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(clone.count, 3u, @"");
+    XCTAssertEqual([clone countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([clone countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -546,16 +546,16 @@
     [set addObject: @3 forKey: @"other"];
     
     FRBKeyedSet *clone = [set mutableCopy];
-    STAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
+    XCTAssertTrue([clone isKindOfClass: [FRBKeyedSet class]],
                  @"Got '%@' instead", NSStringFromClass([clone class]));
     
-    STAssertEquals(clone.count, 3u, @"");
-    STAssertEquals([clone countForKey:   @"key"], 2u, @"");
-    STAssertEquals([clone countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(clone.count, 3u, @"");
+    XCTAssertEqual([clone countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([clone countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([clone containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([clone containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -571,16 +571,16 @@
     
     FRBKeyedSet *decoded = [NSKeyedUnarchiver unarchiveObjectWithData: data];
     
-    STAssertTrue([decoded isKindOfClass: [FRBKeyedSet class]],
+    XCTAssertTrue([decoded isKindOfClass: [FRBKeyedSet class]],
                  @"Got '%@' instead", NSStringFromClass([decoded class]));
     
-    STAssertEquals(decoded.count, 3u, @"");
-    STAssertEquals([decoded countForKey:   @"key"], 2u, @"");
-    STAssertEquals([decoded countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(decoded.count, 3u, @"");
+    XCTAssertEqual([decoded countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([decoded countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([decoded containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([decoded containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([decoded containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([decoded containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([decoded containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([decoded containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -594,13 +594,13 @@
     
     [set unionKeyedSet: set];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:   @"key"], 2u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -619,22 +619,22 @@
     
     [set unionKeyedSet: other];
     
-    STAssertEquals(set.count, 5u, @"");
-    STAssertEquals([set countForKey:     @"key"], 3u, @"");
-    STAssertEquals([set countForKey:   @"other"], 1u, @"");
-    STAssertEquals([set countForKey: @"someKey"], 1u, @"");
+    XCTAssertEqual(set.count, 5u, @"");
+    XCTAssertEqual([set countForKey:     @"key"], 3u, @"");
+    XCTAssertEqual([set countForKey:   @"other"], 1u, @"");
+    XCTAssertEqual([set countForKey: @"someKey"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1 forKey:     @"key"], @"");
-    STAssertTrue([set containsObject: @2 forKey:     @"key"], @"");
-    STAssertTrue([set containsObject: @4 forKey:     @"key"], @"");
-    STAssertTrue([set containsObject: @3 forKey:   @"other"], @"");
-    STAssertTrue([set containsObject: @5 forKey: @"someKey"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey:     @"key"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey:     @"key"], @"");
+    XCTAssertTrue([set containsObject: @4 forKey:     @"key"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey:   @"other"], @"");
+    XCTAssertTrue([set containsObject: @5 forKey: @"someKey"], @"");
     
     
-    STAssertEquals(other.count, 3u, @"");
-    STAssertEquals([other countForKey:     @"key"], 2u, @"");
-    STAssertEquals([other countForKey:   @"other"], 0u, @"");
-    STAssertEquals([other countForKey: @"someKey"], 1u, @"");
+    XCTAssertEqual(other.count, 3u, @"");
+    XCTAssertEqual([other countForKey:     @"key"], 2u, @"");
+    XCTAssertEqual([other countForKey:   @"other"], 0u, @"");
+    XCTAssertEqual([other countForKey: @"someKey"], 1u, @"");
 }
 
 
@@ -648,7 +648,7 @@
     
     [set minusKeyedSet: set];
     
-    STAssertEquals(set.count, 0u, @"");
+    XCTAssertEqual(set.count, 0u, @"");
 }
 
 
@@ -669,22 +669,22 @@
     
     [set minusKeyedSet: other];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:     @"key"], 1u, @"");
-    STAssertEquals([set countForKey:   @"other"], 2u, @"");
-    STAssertEquals([set countForKey: @"someKey"], 0u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:     @"key"], 1u, @"");
+    XCTAssertEqual([set countForKey:   @"other"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"someKey"], 0u, @"");
     
-    STAssertFalse([set containsObject: @1 forKey: @"key"], @"");
+    XCTAssertFalse([set containsObject: @1 forKey: @"key"], @"");
     
-    STAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @1 forKey: @"other"], @"");
-    STAssertTrue([set containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey: @"other"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey: @"other"], @"");
     
     
-    STAssertEquals(other.count, 3u, @"");
-    STAssertEquals([other countForKey:     @"key"], 2u, @"");
-    STAssertEquals([other countForKey:   @"other"], 0u, @"");
-    STAssertEquals([other countForKey: @"someKey"], 1u, @"");
+    XCTAssertEqual(other.count, 3u, @"");
+    XCTAssertEqual([other countForKey:     @"key"], 2u, @"");
+    XCTAssertEqual([other countForKey:   @"other"], 0u, @"");
+    XCTAssertEqual([other countForKey: @"someKey"], 1u, @"");
 }
 
 
@@ -698,13 +698,13 @@
     
     [set intersectKeyedSet: set];
     
-    STAssertEquals(set.count, 3u, @"");
-    STAssertEquals([set countForKey:   @"key"], 2u, @"");
-    STAssertEquals([set countForKey: @"other"], 1u, @"");
+    XCTAssertEqual(set.count, 3u, @"");
+    XCTAssertEqual([set countForKey:   @"key"], 2u, @"");
+    XCTAssertEqual([set countForKey: @"other"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
-    STAssertTrue([set containsObject: @3 forKey: @"other"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @2 forKey:   @"key"], @"");
+    XCTAssertTrue([set containsObject: @3 forKey: @"other"], @"");
 }
 
 
@@ -726,15 +726,15 @@
     
     [set intersectKeyedSet: other];
     
-    STAssertEquals(set.count, 1u, @"");
-    STAssertEquals([set countForKey:     @"key"], 1u, @"");
+    XCTAssertEqual(set.count, 1u, @"");
+    XCTAssertEqual([set countForKey:     @"key"], 1u, @"");
     
-    STAssertTrue([set containsObject: @1 forKey: @"key"], @"");
+    XCTAssertTrue([set containsObject: @1 forKey: @"key"], @"");
     
-    STAssertEquals(other.count, 3u, @"");
-    STAssertEquals([other countForKey:     @"key"], 2u, @"");
-    STAssertEquals([other countForKey:   @"other"], 0u, @"");
-    STAssertEquals([other countForKey: @"someKey"], 1u, @"");
+    XCTAssertEqual(other.count, 3u, @"");
+    XCTAssertEqual([other countForKey:     @"key"], 2u, @"");
+    XCTAssertEqual([other countForKey:   @"other"], 0u, @"");
+    XCTAssertEqual([other countForKey: @"someKey"], 1u, @"");
 }
 
 
@@ -742,13 +742,13 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set addObject: nil forKey:  @1], @"");
-    STAssertThrows([set addObject: @1  forKey: nil], @"");
+    XCTAssertThrows([set addObject: nil forKey:  @1], @"");
+    XCTAssertThrows([set addObject: @1  forKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set addObject: nil forKey:  @1], @"");
-    STAssertNoThrow([set addObject: @1  forKey: nil], @"");
+    XCTAssertNoThrow([set addObject: nil forKey:  @1], @"");
+    XCTAssertNoThrow([set addObject: @1  forKey: nil], @"");
 }
 
 
@@ -756,13 +756,13 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set addObjectsFromArray: nil forKey:  @1], @"");
-    STAssertThrows([set addObjectsFromArray: @[] forKey: nil], @"");
+    XCTAssertThrows([set addObjectsFromArray: nil forKey:  @1], @"");
+    XCTAssertThrows([set addObjectsFromArray: @[] forKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set addObjectsFromArray: nil forKey:  @1], @"");
-    STAssertNoThrow([set addObjectsFromArray: @[] forKey: nil], @"");
+    XCTAssertNoThrow([set addObjectsFromArray: nil forKey:  @1], @"");
+    XCTAssertNoThrow([set addObjectsFromArray: @[] forKey: nil], @"");
 }
 
 
@@ -770,13 +770,13 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set addObjectsFromArray: nil         forKey:  @1], @"");
-    STAssertThrows([set addObjectsFromArray: [NSSet set] forKey: nil], @"");
+    XCTAssertThrows([set addObjectsFromSet: nil         forKey:  @1], @"");
+    XCTAssertThrows([set addObjectsFromSet: [NSSet set] forKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set addObjectsFromSet: nil         forKey:  @1], @"");
-    STAssertNoThrow([set addObjectsFromSet: [NSSet set] forKey: nil], @"");
+    XCTAssertNoThrow([set addObjectsFromSet: nil         forKey:  @1], @"");
+    XCTAssertNoThrow([set addObjectsFromSet: [NSSet set] forKey: nil], @"");
 }
 
 
@@ -784,11 +784,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set addObjectsFromDictionary: nil], @"");
+    XCTAssertThrows([set addObjectsFromDictionary: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set addObjectsFromDictionary: nil], @"");
+    XCTAssertNoThrow([set addObjectsFromDictionary: nil], @"");
 }
 
 
@@ -796,12 +796,12 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set countForKey: nil], @"");
+    XCTAssertThrows([set countForKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set countForKey: nil],     @"");
-    STAssertEquals ([set countForKey: nil], 0u, @"");
+    XCTAssertNoThrow([set countForKey: nil],     @"");
+    XCTAssertEqual ([set countForKey: nil], 0u, @"");
 }
 
 
@@ -809,16 +809,16 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set containsObject: nil forKey:  @1], @"");
-    STAssertThrows([set containsObject:  @1 forKey: nil], @"");
+    XCTAssertThrows([set containsObject: nil forKey:  @1], @"");
+    XCTAssertThrows([set containsObject:  @1 forKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set containsObject: nil forKey:  @1], @"");
-    STAssertNoThrow([set containsObject:  @1 forKey: nil], @"");
+    XCTAssertNoThrow([set containsObject: nil forKey:  @1], @"");
+    XCTAssertNoThrow([set containsObject:  @1 forKey: nil], @"");
     
-    STAssertEquals ([set containsObject: nil forKey: nil], NO, @"");
-    STAssertEquals ([set containsObject:  @1 forKey:  @1], NO, @"");
+    XCTAssertEqual ([set containsObject: nil forKey: nil], NO, @"");
+    XCTAssertEqual ([set containsObject:  @1 forKey:  @1], NO, @"");
 }
 
 
@@ -826,12 +826,12 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set containsObject: nil], @"");
+    XCTAssertThrows([set containsObject: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set containsObject: nil],     @"");
-    STAssertEquals ([set containsObject: nil], NO, @"");
+    XCTAssertNoThrow([set containsObject: nil],     @"");
+    XCTAssertEqual ([set containsObject: nil], NO, @"");
 }
 
 
@@ -839,12 +839,12 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set arrayOfObjectsForKey: nil], @"");
+    XCTAssertThrows([set arrayOfObjectsForKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set arrayOfObjectsForKey: nil], @"");
-    STAssertNil    ([set arrayOfObjectsForKey: nil], @"");
+    XCTAssertNoThrow([set arrayOfObjectsForKey: nil], @"");
+    XCTAssertNil    ([set arrayOfObjectsForKey: nil], @"");
 }
 
 
@@ -852,12 +852,12 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set setOfObjectsForKey: nil], @"");
+    XCTAssertThrows([set setOfObjectsForKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set setOfObjectsForKey: nil], @"");
-    STAssertNil    ([set setOfObjectsForKey: nil], @"");
+    XCTAssertNoThrow([set setOfObjectsForKey: nil], @"");
+    XCTAssertNil    ([set setOfObjectsForKey: nil], @"");
 }
 
 
@@ -865,12 +865,12 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set anyObjectForKey: nil], @"");
+    XCTAssertThrows([set anyObjectForKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set anyObjectForKey: nil], @"");
-    STAssertNil    ([set anyObjectForKey: nil], @"");
+    XCTAssertNoThrow([set anyObjectForKey: nil], @"");
+    XCTAssertNil    ([set anyObjectForKey: nil], @"");
 }
 
 
@@ -878,11 +878,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set removeAllObjectsForKey: nil], @"");
+    XCTAssertThrows([set removeAllObjectsForKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set removeAllObjectsForKey: nil], @"");
+    XCTAssertNoThrow([set removeAllObjectsForKey: nil], @"");
 }
 
 
@@ -890,11 +890,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set removeObject: nil], @"");
+    XCTAssertThrows([set removeObject: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set removeObject: nil], @"");
+    XCTAssertNoThrow([set removeObject: nil], @"");
 }
 
 
@@ -902,13 +902,13 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set removeObject: nil forKey:  @1], @"");
-    STAssertThrows([set removeObject:  @1 forKey: nil], @"");
+    XCTAssertThrows([set removeObject: nil forKey:  @1], @"");
+    XCTAssertThrows([set removeObject:  @1 forKey: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set removeObject: nil forKey:  @1], @"");
-    STAssertNoThrow([set removeObject:  @1 forKey: nil], @"");
+    XCTAssertNoThrow([set removeObject: nil forKey:  @1], @"");
+    XCTAssertNoThrow([set removeObject:  @1 forKey: nil], @"");
 }
 
 
@@ -916,11 +916,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set removeObjectsFromArray: nil], @"");
+    XCTAssertThrows([set removeObjectsFromArray: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set removeObjectsFromArray: nil], @"");
+    XCTAssertNoThrow([set removeObjectsFromArray: nil], @"");
 }
 
 
@@ -928,11 +928,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set removeObjectsFromSet: nil], @"");
+    XCTAssertThrows([set removeObjectsFromSet: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set removeObjectsFromSet: nil], @"");
+    XCTAssertNoThrow([set removeObjectsFromSet: nil], @"");
 }
 
 
@@ -940,11 +940,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set enumerateObjectsUsingBlock: nil], @"");
+    XCTAssertThrows([set enumerateObjectsUsingBlock: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set enumerateObjectsUsingBlock: nil], @"");
+    XCTAssertNoThrow([set enumerateObjectsUsingBlock: nil], @"");
 }
 
 
@@ -952,17 +952,17 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set enumerateObjectsForKey: nil usingBlock:
+    XCTAssertThrows([set enumerateObjectsForKey: nil usingBlock:
                     ^(id object, FRBKeyedSetKey key, BOOL *stop){}], @"");
     
-    STAssertThrows([set enumerateObjectsForKey:  @1 usingBlock: nil], @"");
+    XCTAssertThrows([set enumerateObjectsForKey:  @1 usingBlock: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set enumerateObjectsForKey: nil usingBlock:
+    XCTAssertNoThrow([set enumerateObjectsForKey: nil usingBlock:
                     ^(id object, FRBKeyedSetKey key, BOOL *stop){}], @"");
     
-    STAssertNoThrow([set enumerateObjectsForKey:  @1 usingBlock: nil], @"");
+    XCTAssertNoThrow([set enumerateObjectsForKey:  @1 usingBlock: nil], @"");
 }
 
 
@@ -970,11 +970,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set unionKeyedSet: nil], @"");
+    XCTAssertThrows([set unionKeyedSet: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set unionKeyedSet: nil], @"");
+    XCTAssertNoThrow([set unionKeyedSet: nil], @"");
 }
 
 
@@ -982,11 +982,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set minusKeyedSet: nil], @"");
+    XCTAssertThrows([set minusKeyedSet: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set minusKeyedSet: nil], @"");
+    XCTAssertNoThrow([set minusKeyedSet: nil], @"");
 }
 
 
@@ -994,11 +994,11 @@
 {
     FRBKeyedSet *set = [FRBKeyedSet new];
     
-    STAssertThrows([set intersectKeyedSet: nil], @"");
+    XCTAssertThrows([set intersectKeyedSet: nil], @"");
     
     set.suppressNilArgumentExceptions = YES;
     
-    STAssertNoThrow([set intersectKeyedSet: nil], @"");
+    XCTAssertNoThrow([set intersectKeyedSet: nil], @"");
 }
 
 @end

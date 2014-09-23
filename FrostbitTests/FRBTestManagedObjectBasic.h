@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "FRBManagedObject.h"
 
 
@@ -45,5 +45,5 @@
 
 /*! This test suite tests the basic functionality of FRBManagedObject. A helper subclass with a number of @dynamic properties is considered and the dynamic implementations of these properties are tested: whether the accessors are properly added to the class, whether setting property values work, whether getting property values work, whether the values are properly stored (i.e. checking the set and get results for equality).
  */
-@interface FRBTestManagedObjectBasic : SenTestCase
+@interface FRBTestManagedObjectBasic : XCTestCase
 @end

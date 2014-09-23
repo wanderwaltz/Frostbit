@@ -25,7 +25,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.removedKeyPaths containsObject: @"nested.key"],
+    XCTAssertTrue([diff.removedKeyPaths containsObject: @"nested.key"],
                  @"removedKeyPaths should contain all key paths for keys which were removed "
                  @"from the new revision");
 
@@ -39,7 +39,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
+    XCTAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
                  @"updatedKeyPaths should contain all updated key paths");
     
 }
@@ -52,7 +52,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.addedKeyPaths containsObject: @"nested.key"],
+    XCTAssertTrue([diff.addedKeyPaths containsObject: @"nested.key"],
                  @"addedKeyPaths should contain all key paths for keys which were removed "
                  @"from the new revision");
     
@@ -66,7 +66,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
+    XCTAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
                  @"updatedKeyPaths should contain all updated key paths");
     
 }
@@ -79,7 +79,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeyPaths containsObject: @"nested.key"],
+    XCTAssertTrue([diff.updatedKeyPaths containsObject: @"nested.key"],
                  @"updatedKeyPaths should contain all updated key paths");
     
 }
@@ -92,7 +92,7 @@
     
     FRBDiff *diff = [[FRBDiff alloc] initWithOldRevision: old newRevision: new];
     
-    STAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
+    XCTAssertTrue([diff.updatedKeyPaths containsObject: @"nested"],
                  @"updatedKeyPaths should contain all updated key paths");
     
 }

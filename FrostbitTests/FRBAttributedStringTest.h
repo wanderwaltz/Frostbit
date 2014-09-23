@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Egor Chiglintsev. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <CoreText/CoreText.h>
 #import <UIKit/UIKit.h>
 
@@ -18,7 +18,7 @@
 /*! Each test case clears the registered styles
     for FRBAttributedStringBuilder prior to execution
  */
-@interface FRBAttributedStringTest : SenTestCase
+@interface FRBAttributedStringTest : XCTestCase
 {
     FRBAttributedStringBuilder *_stringBuilder;
 }
